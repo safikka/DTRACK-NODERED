@@ -1,0 +1,635 @@
+[
+    {
+        "id": "368b4824ae6b78dd",
+        "type": "tab",
+        "label": "DTRACK",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2ccbef17783689dd",
+        "type": "inject",
+        "z": "368b4824ae6b78dd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "statusNet",
+        "payloadType": "flow",
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "8dff68f75f80ae37",
+                "9b5824bce290ba60"
+            ]
+        ]
+    },
+    {
+        "id": "c800789aad8e0dfb",
+        "type": "Kafka Producer",
+        "z": "368b4824ae6b78dd",
+        "name": "HISTORY",
+        "broker": "b9cd7152df9839f4",
+        "topic": "tpc-dtrack-tracking-history",
+        "topicSlash2dot": false,
+        "requireAcks": 1,
+        "ackTimeoutMs": 100,
+        "partitionerType": 0,
+        "key": "",
+        "partition": "1",
+        "attributes": 0,
+        "connectionType": "Producer",
+        "convertFromJson": false,
+        "x": 1280,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "cae34ec249279fda",
+        "type": "serial in",
+        "z": "368b4824ae6b78dd",
+        "name": "GPS Serial Raw",
+        "serial": "a3736c30337e8d45",
+        "x": 360,
+        "y": 980,
+        "wires": [
+            [
+                "48bb76204e5a865e"
+            ]
+        ]
+    },
+    {
+        "id": "48bb76204e5a865e",
+        "type": "nmea",
+        "z": "368b4824ae6b78dd",
+        "name": "",
+        "property": "payload",
+        "outputProperty": "payload",
+        "x": 510,
+        "y": 980,
+        "wires": [
+            [
+                "b1134e37141c69a7"
+            ]
+        ]
+    },
+    {
+        "id": "dde7e8876ba8fe6a",
+        "type": "debug",
+        "z": "368b4824ae6b78dd",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "b1134e37141c69a7",
+        "type": "switch",
+        "z": "368b4824ae6b78dd",
+        "name": "Parsing RMC GGA",
+        "property": "payload.sentence",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "RMC",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GGA",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 670,
+        "y": 980,
+        "wires": [
+            [
+                "75377dba771efcc1",
+                "e9c5848895cd53ad"
+            ],
+            [
+                "4bb880202b5e8d98"
+            ]
+        ]
+    },
+    {
+        "id": "75377dba771efcc1",
+        "type": "function",
+        "z": "368b4824ae6b78dd",
+        "name": "RMC",
+        "func": "let rmc = {};\nrmc.gps_time = msg.payload.dateTime;\nrmc.speed = msg.payload.speedKnots;\nmsg.payload = rmc;\ndelete msg.port;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 980,
+        "wires": [
+            [
+                "14a473c8149329ce"
+            ]
+        ]
+    },
+    {
+        "id": "4bb880202b5e8d98",
+        "type": "function",
+        "z": "368b4824ae6b78dd",
+        "name": "GGA",
+        "func": "let gga = {};\nif (typeof msg.payload.lon === 'string' && typeof msg.payload.lat === 'string'){\n    msg.payload.lon = 0;\n    msg.payload.lat = 0;\n}\ngga.lon = msg.payload.lon;\ngga.lat = msg.payload.lat;\ngga.alt = msg.payload.alt;\ngga.numsat = msg.payload.numSat;\nmsg.payload = gga;\ndelete msg.port;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 1020,
+        "wires": [
+            [
+                "14a473c8149329ce"
+            ]
+        ]
+    },
+    {
+        "id": "14a473c8149329ce",
+        "type": "join",
+        "z": "368b4824ae6b78dd",
+        "name": "Store Data",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "11",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1010,
+        "y": 980,
+        "wires": [
+            [
+                "8dd12fba5b5f1aa1"
+            ]
+        ]
+    },
+    {
+        "id": "c919cf1f3d7178d1",
+        "type": "inject",
+        "z": "368b4824ae6b78dd",
+        "name": "Hardcode",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"no_unit\":\"\",\"direction\":0,\"status_unit\":1,\"geofence_id\":null,\"geofence_name\":\"\"}",
+        "payloadType": "json",
+        "x": 830,
+        "y": 940,
+        "wires": [
+            [
+                "14a473c8149329ce"
+            ]
+        ]
+    },
+    {
+        "id": "e2c510870dd028c7",
+        "type": "function",
+        "z": "368b4824ae6b78dd",
+        "name": "PUSH LIVE",
+        "func": "const str = JSON.stringify(msg.payload);\nmsg.payload = str;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1450,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8dd12fba5b5f1aa1",
+        "type": "delay",
+        "z": "368b4824ae6b78dd",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 980,
+        "wires": [
+            [
+                "e2c510870dd028c7",
+                "694d939069c03504"
+            ]
+        ]
+    },
+    {
+        "id": "5ca91fdf25277288",
+        "type": "Kafka Producer",
+        "z": "368b4824ae6b78dd",
+        "name": "LIVE",
+        "broker": "b9cd7152df9839f4",
+        "topic": "tpc-dtrack-tracking-live",
+        "topicSlash2dot": false,
+        "requireAcks": 1,
+        "ackTimeoutMs": 100,
+        "partitionerType": 0,
+        "key": "",
+        "partition": "1",
+        "attributes": 0,
+        "connectionType": "Producer",
+        "convertFromJson": false,
+        "x": 1650,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "694d939069c03504",
+        "type": "function",
+        "z": "368b4824ae6b78dd",
+        "name": "INSERT DATA",
+        "func": "const firstCmd = \"INSERT INTO HISTORY(no_unit, longitude, latitude, altitude, direction, speed, status_unit, geofence_id, geofence_name, gps_time, satellite, insertdate) values (\";\nconst valueCmd = `\"${msg.payload.no_unit}\",${msg.payload.lon},${msg.payload.lat},${msg.payload.alt},${msg.payload.direction},${msg.payload.speed},${msg.payload.status_unit},${msg.payload.geofence_id},\"${msg.payload.geofence_name}\",\"${msg.payload.gps_time}\",${msg.payload.numsat},strftime('%Y-%m-%d %H:%M:%f','now','localtime'))`;\nconst insert = firstCmd + valueCmd;\nmsg.topic = insert;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1460,
+        "y": 860,
+        "wires": [
+            [
+                "c0521b42c51c83ca",
+                "1a1ea3678e44f778"
+            ]
+        ]
+    },
+    {
+        "id": "c0521b42c51c83ca",
+        "type": "sqlite",
+        "z": "368b4824ae6b78dd",
+        "mydb": "717c59f6f2d02fd2",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "dataLocal",
+        "x": 1660,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3914b1a40e94188d",
+        "type": "status",
+        "z": "368b4824ae6b78dd",
+        "name": "",
+        "scope": [
+            "c800789aad8e0dfb"
+        ],
+        "x": 480,
+        "y": 1380,
+        "wires": [
+            [
+                "1c6bf3cd988ff19b"
+            ]
+        ]
+    },
+    {
+        "id": "1c6bf3cd988ff19b",
+        "type": "function",
+        "z": "368b4824ae6b78dd",
+        "name": "function 1",
+        "func": "if (msg.status.text.includes('Connected to')) {\n    msg.statusNet = 0;\n} else {\n    msg.statusNet = 1;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1380,
+        "wires": [
+            [
+                "a53f37965272f463",
+                "dde7e8876ba8fe6a"
+            ]
+        ]
+    },
+    {
+        "id": "a53f37965272f463",
+        "type": "change",
+        "z": "368b4824ae6b78dd",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "statusNet",
+                "pt": "flow",
+                "to": "statusNet",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8dff68f75f80ae37",
+        "type": "function",
+        "z": "368b4824ae6b78dd",
+        "name": "QUERY",
+        "func": "if(msg.payload === 0){\n    msg.topic = \"SELECT * FROM HISTORY ORDER BY ROWID LIMIT 3\"\n} else {\n    msg.topic = \"\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 320,
+        "wires": [
+            [
+                "33b734615cf80a1e"
+            ]
+        ]
+    },
+    {
+        "id": "5383e8c904f62cf5",
+        "type": "inject",
+        "z": "368b4824ae6b78dd",
+        "name": "",
+        "props": [
+            {
+                "p": "statusNet",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 710,
+        "y": 1300,
+        "wires": [
+            [
+                "a53f37965272f463"
+            ]
+        ]
+    },
+    {
+        "id": "1a1ea3678e44f778",
+        "type": "debug",
+        "z": "368b4824ae6b78dd",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1680,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "33b734615cf80a1e",
+        "type": "sqlite",
+        "z": "368b4824ae6b78dd",
+        "mydb": "717c59f6f2d02fd2",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "dataLocal",
+        "x": 760,
+        "y": 320,
+        "wires": [
+            [
+                "3256e4482f5d8a07",
+                "370899340ae1121e",
+                "ece48f4624cfeb45"
+            ]
+        ]
+    },
+    {
+        "id": "7c65041fa7f9cb0a",
+        "type": "sqlite",
+        "z": "368b4824ae6b78dd",
+        "mydb": "717c59f6f2d02fd2",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "dataLocal",
+        "x": 1580,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3256e4482f5d8a07",
+        "type": "function",
+        "z": "368b4824ae6b78dd",
+        "name": "PUSH HISTORY - 1",
+        "func": "const str = JSON.stringify(msg.payload[0]);\nmsg.payload = str;\ndelete msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 260,
+        "wires": [
+            [
+                "c800789aad8e0dfb"
+            ]
+        ]
+    },
+    {
+        "id": "9b5824bce290ba60",
+        "type": "debug",
+        "z": "368b4824ae6b78dd",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "58a72e2e9273c52c",
+        "type": "function",
+        "z": "368b4824ae6b78dd",
+        "name": "DELETE SETELAH KIRIM (BARU)",
+        "func": "let query = {};\nquery.topic = \"DELETE FROM history WHERE rowid in (SELECT rowid FROM history LIMIT 3 )\"\nmsg = query;\nreturn msg;\n\n// if (msg.payload === 0) {\n//     msg.topic = \"DELETE FROM history WHERE rowid in (SELECT rowid FROM history LIMIT 3 )\"\n// }\n// return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 520,
+        "wires": [
+            [
+                "7c65041fa7f9cb0a"
+            ]
+        ]
+    },
+    {
+        "id": "370899340ae1121e",
+        "type": "function",
+        "z": "368b4824ae6b78dd",
+        "name": "PUSH HISTORY - 2",
+        "func": "const str = JSON.stringify(msg.payload[1]);\nmsg.payload = str;\ndelete msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 320,
+        "wires": [
+            [
+                "c800789aad8e0dfb"
+            ]
+        ]
+    },
+    {
+        "id": "ece48f4624cfeb45",
+        "type": "function",
+        "z": "368b4824ae6b78dd",
+        "name": "PUSH HISTORY - 3",
+        "func": "const str = JSON.stringify(msg.payload[2]);\nmsg.payload = str;\ndelete msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 380,
+        "wires": [
+            [
+                "c800789aad8e0dfb",
+                "58a72e2e9273c52c"
+            ]
+        ]
+    },
+    {
+        "id": "e9c5848895cd53ad",
+        "type": "debug",
+        "z": "368b4824ae6b78dd",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "b9cd7152df9839f4",
+        "type": "Kafka Broker",
+        "name": "Server KPP",
+        "hosts": [
+            {
+                "host": "g-02-0001.kppmining.com",
+                "port": 9092
+            }
+        ],
+        "hostsEnvVar": "",
+        "connectTimeout": "10000",
+        "requestTimeout": "30000",
+        "autoConnect": "true",
+        "idleConnection": "5",
+        "reconnectOnIdle": "true",
+        "maxAsyncRequests": "10",
+        "checkInterval": "10",
+        "selfSign": true,
+        "usetls": false,
+        "useCredentials": false
+    },
+    {
+        "id": "a3736c30337e8d45",
+        "type": "serial-port",
+        "serialport": "/dev/ttyACM0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "717c59f6f2d02fd2",
+        "type": "sqlitedb",
+        "db": "/home/pi/dataGPS.db",
+        "mode": "RWC"
+    }
+]
