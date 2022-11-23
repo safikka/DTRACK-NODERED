@@ -33,26 +33,6 @@
         ]
     },
     {
-        "id": "668211ae85991c7d",
-        "type": "Kafka Producer",
-        "z": "ba1572da8a4b1f0f",
-        "name": "HISTORY",
-        "broker": "b9cd7152df9839f4",
-        "topic": "tpc-dtrack-tracking-history",
-        "topicSlash2dot": false,
-        "requireAcks": 1,
-        "ackTimeoutMs": 100,
-        "partitionerType": 0,
-        "key": "",
-        "partition": "1",
-        "attributes": 0,
-        "connectionType": "Producer",
-        "convertFromJson": false,
-        "x": 3480,
-        "y": 180,
-        "wires": []
-    },
-    {
         "id": "8d759d00a62843bd",
         "type": "serial in",
         "z": "ba1572da8a4b1f0f",
@@ -459,39 +439,6 @@
         ]
     },
     {
-        "id": "323da9d11bde9fb8",
-        "type": "sqlite",
-        "z": "ba1572da8a4b1f0f",
-        "mydb": "717c59f6f2d02fd2",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "dataLocal",
-        "x": 3780,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "adaeff263e6549cb",
-        "type": "function",
-        "z": "ba1572da8a4b1f0f",
-        "name": "PUSH HISTORY - 1",
-        "func": "const str = JSON.stringify(msg.payload[0]);\nmsg.payload = str;\ndelete msg.topic;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 3220,
-        "y": 120,
-        "wires": [
-            [
-                "668211ae85991c7d"
-            ]
-        ]
-    },
-    {
         "id": "010f57bcff30e004",
         "type": "debug",
         "z": "ba1572da8a4b1f0f",
@@ -506,64 +453,6 @@
         "x": 1640,
         "y": 420,
         "wires": []
-    },
-    {
-        "id": "96c98496f8c48c21",
-        "type": "function",
-        "z": "ba1572da8a4b1f0f",
-        "name": "DELETE SETELAH KIRIM (BARU)",
-        "func": "let query = {};\nquery.topic = \"DELETE FROM history WHERE rowid in (SELECT rowid FROM history LIMIT 3 )\"\nmsg = query;\nreturn msg;\n\n// if (msg.payload === 0) {\n//     msg.topic = \"DELETE FROM history WHERE rowid in (SELECT rowid FROM history LIMIT 3 )\"\n// }\n// return msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 3540,
-        "y": 380,
-        "wires": [
-            [
-                "323da9d11bde9fb8"
-            ]
-        ]
-    },
-    {
-        "id": "fd9b2693b3286f6c",
-        "type": "function",
-        "z": "ba1572da8a4b1f0f",
-        "name": "PUSH HISTORY - 2",
-        "func": "const str = JSON.stringify(msg.payload[1]);\nmsg.payload = str;\ndelete msg.topic;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 3220,
-        "y": 180,
-        "wires": [
-            [
-                "668211ae85991c7d"
-            ]
-        ]
-    },
-    {
-        "id": "96a9d54603444b35",
-        "type": "function",
-        "z": "ba1572da8a4b1f0f",
-        "name": "PUSH HISTORY - 3",
-        "func": "const str = JSON.stringify(msg.payload[2]);\nmsg.payload = str;\ndelete msg.topic;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 3220,
-        "y": 240,
-        "wires": [
-            [
-                "668211ae85991c7d",
-                "96c98496f8c48c21"
-            ]
-        ]
     },
     {
         "id": "6e7de4fbad8a2ac5",
@@ -728,6 +617,25 @@
         ]
     },
     {
+        "id": "baaf8922e2d7c647",
+        "type": "serial-port",
+        "serialport": "/dev/ttyACM0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
         "id": "b9cd7152df9839f4",
         "type": "Kafka Broker",
         "name": "Server KPP",
@@ -748,25 +656,6 @@
         "selfSign": true,
         "usetls": false,
         "useCredentials": false
-    },
-    {
-        "id": "baaf8922e2d7c647",
-        "type": "serial-port",
-        "serialport": "/dev/ttyACM0",
-        "serialbaud": "9600",
-        "databits": "8",
-        "parity": "none",
-        "stopbits": "1",
-        "waitfor": "",
-        "dtr": "none",
-        "rts": "none",
-        "cts": "none",
-        "dsr": "none",
-        "newline": "\\n",
-        "bin": "false",
-        "out": "char",
-        "addchar": "",
-        "responsetimeout": "10000"
     },
     {
         "id": "717c59f6f2d02fd2",
