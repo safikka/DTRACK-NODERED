@@ -33,12 +33,32 @@
         ]
     },
     {
+        "id": "668211ae85991c7d",
+        "type": "Kafka Producer",
+        "z": "ba1572da8a4b1f0f",
+        "name": "HISTORY",
+        "broker": "b9cd7152df9839f4",
+        "topic": "tpc-dtrack-tracking-history",
+        "topicSlash2dot": false,
+        "requireAcks": 1,
+        "ackTimeoutMs": 100,
+        "partitionerType": 0,
+        "key": "",
+        "partition": "1",
+        "attributes": 0,
+        "connectionType": "Producer",
+        "convertFromJson": false,
+        "x": 3480,
+        "y": 180,
+        "wires": []
+    },
+    {
         "id": "8d759d00a62843bd",
         "type": "serial in",
         "z": "ba1572da8a4b1f0f",
         "name": "GPS Serial Raw",
         "serial": "baaf8922e2d7c647",
-        "x": 360,
+        "x": 280,
         "y": 980,
         "wires": [
             [
@@ -53,12 +73,11 @@
         "name": "",
         "property": "payload",
         "outputProperty": "payload",
-        "x": 510,
+        "x": 430,
         "y": 980,
         "wires": [
             [
-                "c79389feb7939c93",
-                "6e7de4fbad8a2ac5"
+                "c79389feb7939c93"
             ]
         ]
     },
@@ -67,7 +86,7 @@
         "type": "debug",
         "z": "ba1572da8a4b1f0f",
         "name": "debug 1",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -83,7 +102,7 @@
         "id": "c79389feb7939c93",
         "type": "switch",
         "z": "ba1572da8a4b1f0f",
-        "name": "Parsing RMC GGA",
+        "name": "Parsing RMC GGA VTG",
         "property": "payload.sentence",
         "propertyType": "msg",
         "rules": [
@@ -96,12 +115,17 @@
                 "t": "eq",
                 "v": "GGA",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "VTG",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 2,
-        "x": 670,
+        "outputs": 3,
+        "x": 610,
         "y": 980,
         "wires": [
             [
@@ -109,6 +133,9 @@
             ],
             [
                 "70db725463521d41"
+            ],
+            [
+                "38a5c85b7625d4e3"
             ]
         ]
     },
@@ -117,14 +144,14 @@
         "type": "function",
         "z": "ba1572da8a4b1f0f",
         "name": "RMC",
-        "func": "let rmc = {};\nrmc.gps_time = msg.payload.dateTime;\nrmc.speed = msg.payload.speedKnots;\nmsg.payload = rmc;\ndelete msg.port;\nreturn msg;",
+        "func": "let rmc = {};\nconst date = new Date(msg.payload.dateTime);\nrmc.gps_time = date.toLocaleString('sv-SE') + \".\" + date.getMilliseconds();\nmsg.payload = rmc;\ndelete msg.port;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 980,
+        "x": 830,
+        "y": 940,
         "wires": [
             [
                 "f47d861c83ca0b7f"
@@ -142,8 +169,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 1020,
+        "x": 830,
+        "y": 980,
         "wires": [
             [
                 "f47d861c83ca0b7f"
@@ -174,7 +201,8 @@
         "y": 980,
         "wires": [
             [
-                "f21eb799064533c8"
+                "f21eb799064533c8",
+                "6e7de4fbad8a2ac5"
             ]
         ]
     },
@@ -196,7 +224,7 @@
         "payload": "{\"no_unit\":\"\",\"direction\":0,\"status_unit\":1,\"geofence_id\":null,\"geofence_name\":\"\"}",
         "payloadType": "json",
         "x": 830,
-        "y": 940,
+        "y": 860,
         "wires": [
             [
                 "f47d861c83ca0b7f"
@@ -439,11 +467,44 @@
         ]
     },
     {
+        "id": "323da9d11bde9fb8",
+        "type": "sqlite",
+        "z": "ba1572da8a4b1f0f",
+        "mydb": "717c59f6f2d02fd2",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "dataLocal",
+        "x": 3780,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "adaeff263e6549cb",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "PUSH HISTORY - 1",
+        "func": "const str = JSON.stringify(msg.payload[0]);\nmsg.payload = str;\ndelete msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3220,
+        "y": 120,
+        "wires": [
+            [
+                "668211ae85991c7d"
+            ]
+        ]
+    },
+    {
         "id": "010f57bcff30e004",
         "type": "debug",
         "z": "ba1572da8a4b1f0f",
         "name": "debug 4",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -453,6 +514,64 @@
         "x": 1640,
         "y": 420,
         "wires": []
+    },
+    {
+        "id": "96c98496f8c48c21",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "DELETE SETELAH KIRIM (BARU)",
+        "func": "let query = {};\nquery.topic = \"DELETE FROM history WHERE rowid in (SELECT rowid FROM history LIMIT 3 )\"\nmsg = query;\nreturn msg;\n\n// if (msg.payload === 0) {\n//     msg.topic = \"DELETE FROM history WHERE rowid in (SELECT rowid FROM history LIMIT 3 )\"\n// }\n// return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3540,
+        "y": 380,
+        "wires": [
+            [
+                "323da9d11bde9fb8"
+            ]
+        ]
+    },
+    {
+        "id": "fd9b2693b3286f6c",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "PUSH HISTORY - 2",
+        "func": "const str = JSON.stringify(msg.payload[1]);\nmsg.payload = str;\ndelete msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3220,
+        "y": 180,
+        "wires": [
+            [
+                "668211ae85991c7d"
+            ]
+        ]
+    },
+    {
+        "id": "96a9d54603444b35",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "PUSH HISTORY - 3",
+        "func": "const str = JSON.stringify(msg.payload[2]);\nmsg.payload = str;\ndelete msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3220,
+        "y": 240,
+        "wires": [
+            [
+                "668211ae85991c7d",
+                "96c98496f8c48c21"
+            ]
+        ]
     },
     {
         "id": "6e7de4fbad8a2ac5",
@@ -467,8 +586,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 820,
+        "x": 1160,
+        "y": 1060,
         "wires": []
     },
     {
@@ -561,7 +680,7 @@
         "attributes": 0,
         "connectionType": "Producer",
         "convertFromJson": false,
-        "x": 1560,
+        "x": 1640,
         "y": 240,
         "wires": []
     },
@@ -617,6 +736,163 @@
         ]
     },
     {
+        "id": "38a5c85b7625d4e3",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "VTG",
+        "func": "let vtg = {};\nvtg.speed = msg.payload.speedKmph;\nmsg.payload = vtg;\ndelete msg.port;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1020,
+        "wires": [
+            [
+                "f47d861c83ca0b7f"
+            ]
+        ]
+    },
+    {
+        "id": "9c395ee7230cd5e6",
+        "type": "file in",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "filename": "/home/pi/settingGPS.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 370,
+        "y": 1680,
+        "wires": [
+            [
+                "3922935bca9a0169"
+            ]
+        ]
+    },
+    {
+        "id": "bffc6e18256e9228",
+        "type": "debug",
+        "z": "ba1572da8a4b1f0f",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "eb11a3abe666c72c",
+        "type": "inject",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1680,
+        "wires": [
+            [
+                "9c395ee7230cd5e6"
+            ]
+        ]
+    },
+    {
+        "id": "3922935bca9a0169",
+        "type": "json",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 570,
+        "y": 1680,
+        "wires": [
+            [
+                "66976cb1406fd4e1"
+            ]
+        ]
+    },
+    {
+        "id": "9b358b87f3584483",
+        "type": "rpi-gpio out",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Trigger Speaker",
+        "pin": "11",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 980,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "66976cb1406fd4e1",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "function 6",
+        "func": "if(msg.payload.tus === true){\n    msg.payload = 1;\n} else {\n    msg.payload = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 1680,
+        "wires": [
+            [
+                "bffc6e18256e9228",
+                "9b358b87f3584483"
+            ]
+        ]
+    },
+    {
+        "id": "b9cd7152df9839f4",
+        "type": "Kafka Broker",
+        "name": "Server KPP",
+        "hosts": [
+            {
+                "host": "k-02-0001.kppmining.com",
+                "port": 9092
+            }
+        ],
+        "hostsEnvVar": "",
+        "connectTimeout": "10000",
+        "requestTimeout": "30000",
+        "autoConnect": "true",
+        "idleConnection": "5",
+        "reconnectOnIdle": "true",
+        "maxAsyncRequests": "10",
+        "checkInterval": "10",
+        "selfSign": true,
+        "usetls": false,
+        "useCredentials": false
+    },
+    {
         "id": "baaf8922e2d7c647",
         "type": "serial-port",
         "serialport": "/dev/ttyACM0",
@@ -634,28 +910,6 @@
         "out": "char",
         "addchar": "",
         "responsetimeout": "10000"
-    },
-    {
-        "id": "b9cd7152df9839f4",
-        "type": "Kafka Broker",
-        "name": "Server KPP",
-        "hosts": [
-            {
-                "host": "g-02-0001.kppmining.com",
-                "port": 9092
-            }
-        ],
-        "hostsEnvVar": "",
-        "connectTimeout": "10000",
-        "requestTimeout": "30000",
-        "autoConnect": "true",
-        "idleConnection": "5",
-        "reconnectOnIdle": "true",
-        "maxAsyncRequests": "10",
-        "checkInterval": "10",
-        "selfSign": true,
-        "usetls": false,
-        "useCredentials": false
     },
     {
         "id": "717c59f6f2d02fd2",
