@@ -66,7 +66,7 @@
         "type": "debug",
         "z": "ba1572da8a4b1f0f",
         "name": "debug 1",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -74,8 +74,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 1560,
+        "x": 480,
+        "y": 1640,
         "wires": []
     },
     {
@@ -206,7 +206,7 @@
         "y": 980,
         "wires": [
             [
-                "90f8c3a648fcc5b9"
+                "4fbbc57874d0baeb"
             ]
         ]
     },
@@ -255,7 +255,7 @@
         "connectionType": "Producer",
         "convertFromJson": false,
         "x": 2170,
-        "y": 980,
+        "y": 920,
         "wires": []
     },
     {
@@ -298,13 +298,14 @@
         "z": "ba1572da8a4b1f0f",
         "name": "",
         "scope": [
-            "9607d381fbd05fe4"
+            "193a5be638830ae5"
         ],
         "x": 280,
         "y": 1560,
         "wires": [
             [
-                "f57705061b6adb5b"
+                "f57705061b6adb5b",
+                "3fb26b34a7fb1952"
             ]
         ]
     },
@@ -323,8 +324,7 @@
         "y": 1560,
         "wires": [
             [
-                "7676e4bb7aca7092",
-                "3fb26b34a7fb1952"
+                "7676e4bb7aca7092"
             ]
         ]
     },
@@ -442,8 +442,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1580,
-        "y": 400,
+        "x": 1600,
+        "y": 320,
         "wires": []
     },
     {
@@ -516,30 +516,10 @@
         "y": 240,
         "wires": [
             [
-                "9607d381fbd05fe4",
-                "010f57bcff30e004"
+                "010f57bcff30e004",
+                "dc1b8682ad79ad4e"
             ]
         ]
-    },
-    {
-        "id": "9607d381fbd05fe4",
-        "type": "Kafka Producer",
-        "z": "ba1572da8a4b1f0f",
-        "name": "HISTORY",
-        "broker": "b9cd7152df9839f4",
-        "topic": "tpc-dtrack-tracking-history",
-        "topicSlash2dot": false,
-        "requireAcks": 1,
-        "ackTimeoutMs": 100,
-        "partitionerType": 0,
-        "key": "",
-        "partition": "1",
-        "attributes": 0,
-        "connectionType": "Producer",
-        "convertFromJson": false,
-        "x": 1560,
-        "y": 240,
-        "wires": []
     },
     {
         "id": "28466ee72646c2a6",
@@ -1011,6 +991,66 @@
         ]
     },
     {
+        "id": "dc1b8682ad79ad4e",
+        "type": "kafkajs-producer",
+        "z": "ba1572da8a4b1f0f",
+        "name": "TOPIC HISTORY",
+        "client": "bc8fd8804f49e009",
+        "topic": "tpc-dtrack-tracking-history",
+        "advancedoptions": false,
+        "acknowledge": "all",
+        "partition": "",
+        "headeritems": {},
+        "key": "",
+        "responsetimeout": 30000,
+        "transactiontimeout": 60000,
+        "metadatamaxage": 300000,
+        "allowautotopiccreation": false,
+        "x": 1630,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4fbbc57874d0baeb",
+        "type": "kafkajs-producer",
+        "z": "ba1572da8a4b1f0f",
+        "name": "TOPIC LIVE",
+        "client": "bc8fd8804f49e009",
+        "topic": "tpc-dtrack-tracking-live",
+        "advancedoptions": false,
+        "acknowledge": "all",
+        "partition": "",
+        "headeritems": {},
+        "key": "",
+        "responsetimeout": 30000,
+        "transactiontimeout": 60000,
+        "metadatamaxage": 300000,
+        "allowautotopiccreation": false,
+        "x": 2190,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "193a5be638830ae5",
+        "type": "Kafka Producer",
+        "z": "ba1572da8a4b1f0f",
+        "name": "HISTORY",
+        "broker": "b9cd7152df9839f4",
+        "topic": "tpc-dtrack-tracking-history",
+        "topicSlash2dot": false,
+        "requireAcks": 1,
+        "ackTimeoutMs": 100,
+        "partitionerType": 0,
+        "key": "",
+        "partition": 0,
+        "attributes": 0,
+        "connectionType": "Producer",
+        "convertFromJson": false,
+        "x": 720,
+        "y": 1400,
+        "wires": []
+    },
+    {
         "id": "baaf8922e2d7c647",
         "type": "serial-port",
         "serialport": "/dev/ttyACM0",
@@ -1041,7 +1081,7 @@
         ],
         "hostsEnvVar": "",
         "connectTimeout": "10000",
-        "requestTimeout": "30000",
+        "requestTimeout": "300000",
         "autoConnect": "true",
         "idleConnection": "5",
         "reconnectOnIdle": "true",
@@ -1062,5 +1102,29 @@
         "type": "sqlitedb",
         "db": "/home/pi/DTRACK-SPEED.db",
         "mode": "RWC"
+    },
+    {
+        "id": "bc8fd8804f49e009",
+        "type": "kafkajs-client",
+        "name": "Server-KPP-DTRACK",
+        "brokers": "g-02-0001.kppmining.com:9092",
+        "clientid": "RaspberryPi-DTRACK",
+        "connectiontimeout": "3000",
+        "requesttimeout": "25000",
+        "advancedretry": false,
+        "maxretrytime": "30000",
+        "initialretrytime": "300",
+        "factor": "0.2",
+        "multiplier": "2",
+        "retries": "5",
+        "auth": "none",
+        "tlsselfsign": false,
+        "tlscacert": "",
+        "tlsclientcert": "",
+        "tlsprivatekey": "",
+        "tlspassphrase": "",
+        "saslssl": true,
+        "saslmechanism": "plain",
+        "loglevel": "error"
     }
 ]
