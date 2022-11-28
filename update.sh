@@ -2,6 +2,11 @@
 
 echo "Memulai update DTRACK ..."
 
+if test -f "/home/pi/.node-red/flows.json";
+then
+    echo "Ada"
+fi
+
 if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/ && cp settingGPS.json /home/pi/ && cp -R node-red-contrib-kafka-manager /home/pi/.node-red/node_modules/ && cp -R node-red-contrib-nmea /home/pi/.node-red/node_modules/ && cp -R node-red-contrib-kafkajs /home/pi/.node-red/node_modules/
 then
     echo "Sukses salin file Update!"
