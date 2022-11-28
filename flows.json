@@ -37,7 +37,7 @@
         "type": "serial in",
         "z": "ba1572da8a4b1f0f",
         "name": "GPS Serial Raw",
-        "serial": "baaf8922e2d7c647",
+        "serial": "8c6331fd4bb5b1ba",
         "x": 280,
         "y": 980,
         "wires": [
@@ -1051,10 +1051,10 @@
         "wires": []
     },
     {
-        "id": "baaf8922e2d7c647",
+        "id": "8c6331fd4bb5b1ba",
         "type": "serial-port",
-        "serialport": "/dev/ttyACM0",
-        "serialbaud": "9600",
+        "serialport": "/dev/ttyUSB_GPS",
+        "serialbaud": "4800",
         "databits": "8",
         "parity": "none",
         "stopbits": "1",
