@@ -1,0 +1,24 @@
+{
+    "name": "node-red-project",
+    "description": "initially created for you by Node-RED 3.0.2",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+      "node-red-configurable-ping": "~1.0.1",
+      "node-red-contrib-config": "~1.2.1",
+      "node-red-contrib-configurable-interval": "~0.9.1",
+      "node-red-contrib-gpsd": "~1.0.4",
+      "node-red-contrib-kafka-manager": "^0.5.1",
+      "node-red-contrib-kafkajs": "^0.0.7",
+      "node-red-contrib-moment": "~4.0.0",
+      "node-red-contrib-nmea": "^0.0.4",
+      "node-red-contrib-play-audio": "^2.5.0",
+      "node-red-dashboard": "~3.2.0",
+      "node-red-node-pi-gpio": "^2.0.5",
+      "node-red-node-ping": "^0.3.1",
+      "node-red-node-random": "^0.4.0",
+      "node-red-node-serialport": "^1.0.1",
+      "node-red-node-smooth": "^0.1.2",
+      "node-red-node-sqlite": "~1.0.3"
+    }
+  }
