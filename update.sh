@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Memulai update DTRACK ..."
-now=$( date +%Y%m%d%H%M )
+now=$( date +%Y-%m-%d %H:%M )
 
 if test -f "/home/pi/.node-red/flows.json";
 then
