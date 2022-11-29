@@ -16,13 +16,11 @@ then
         mv /home/pi/.node-red /home/pi/.node-red-backup-last
         echo "Backup flow lama: OK!"
         unzip -d /home/pi/ node-red-dtrack.zip
-        sudo rm -r /home/pi/.node-red
         mv /home/pi/node-red-dtrack /home/pi/.node-red
         echo "Update flow baru: OK!"
     else
         echo "Tidak ada file Flow lama"
         unzip -d /home/pi/ node-red-dtrack.zip
-        sudo rm -r /home/pi/.node-red
         mv /home/pi/node-red-dtrack /home/pi/.node-red
         echo "Update flow baru: OK!"
     fi
