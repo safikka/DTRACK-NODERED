@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Memulai update DTRACK ..."
-now=$( date +%Y-%m-%d %H:%M )
+now=$( date + "%Y-%m-%d %H:%M" )
 
 if test -f "/home/pi/.node-red/flows.json";
 then
@@ -15,11 +15,11 @@ then
     then
         mv /home/pi/.node-red /home/pi/.node-red-backup-$now
         echo "Backup flow lama: OK!"
-        unzip -d /home/pi/.tes-nodered node-red-dtrack.zip
+        unzip -d /home/pi/.node-red node-red-dtrack.zip
         echo "Update flow baru: OK!"
     else
         echo "Tidak ada file Flow lama"
-        unzip -d /home/pi/.tes-nodered node-red-dtrack.zip
+        unzip -d /home/pi/.node-red node-red-dtrack.zip
         echo "Update flow baru: OK!"
     fi
     echo "Sukses salin file Update!"
