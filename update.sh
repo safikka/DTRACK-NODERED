@@ -13,15 +13,17 @@ if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/ && cp settingGPS.j
 then
     if test -a "/home/pi/.node-red"
     then
-        mv /home/pi/.node-red /home/pi/.node-red-backup-$now
+        mv /home/pi/.node-red /home/pi/.node-red-backup-last
         echo "Backup flow lama: OK!"
-        unzip -d /home/pi/dtrack node-red-dtrack.zip
-        mv /home/pi/dtrack /home/pi/.node-red
+        unzip -d /home/pi/ node-red-dtrack.zip
+        sudo rm -r /home/pi/.node-red
+        mv /home/pi/node-red-dtrack /home/pi/.node-red
         echo "Update flow baru: OK!"
     else
         echo "Tidak ada file Flow lama"
-        unzip -d /home/pi/dtrack node-red-dtrack.zip
-        mv /home/pi/dtrack /home/pi/.node-red
+        unzip -d /home/pi/ node-red-dtrack.zip
+        sudo rm -r /home/pi/.node-red
+        mv /home/pi/node-red-dtrack /home/pi/.node-red
         echo "Update flow baru: OK!"
     fi
     echo "Sukses salin file Update!"
