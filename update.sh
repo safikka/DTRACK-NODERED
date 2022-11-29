@@ -9,26 +9,19 @@ then
     echo "Hapus flow lama: OK!"
 fi
 
-if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/ && cp settingGPS.json /home/pi/ && cp -R node-red-contrib-kafka-manager /home/pi/.node-red/node_modules/ && cp -R node-red-contrib-nmea /home/pi/.node-red/node_modules/ && cp -R node-red-contrib-kafkajs /home/pi/.node-red/node_modules/ && cp flows.json /home/pi/.node-red/
+if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/ && cp settingGPS.json /home/pi/
 then
-    if test -f "/home/pi/.node-red/package.json"
+    if test -f "/home/pi/.node-red"
     then
-        mv /home/pi/.node-red/package.json /home/pi/.node-red/package_backup_$now.json 
-        cp package.json /home/pi/.node-red/
-        echo "Update package.json lama: OK!"
+        mv /home/pi/.node-red /home/pi/.node-red-backup-$now
+        echo "Backup flow lama: OK!"
+        cp node-red-dtrack /home/pi/.node-red
+        echo "Update flow baru: OK!"
     else
-        cp package.json /home/pi/.node-red/
+        echo "Tidak ada file Flow lama"
+        cp node-red-dtrack /home/pi/.node-red
+        echo "Update flow baru: OK!"
     fi
-    
-    if test -f "/home/pi/.node-red/package-lock.json"
-    then
-        mv /home/pi/.node-red/package-lock.json /home/pi/.node-red/package-lock_backup_$now.json 
-        cp package-lock.json /home/pi/.node-red/
-        echo "Update package-lock.json lama: OK!"
-    else
-        cp package-lock.json /home/pi/.node-red/
-    fi
-    
     echo "Sukses salin file Update!"
 else
     echo "Gagal $?"

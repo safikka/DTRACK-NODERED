@@ -1,0 +1,5299 @@
+[
+    {
+        "id": "15158fa8ecb3c7d1",
+        "type": "tab",
+        "label": "CONFIGURATION",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0f78185fea5227c6",
+        "type": "tab",
+        "label": "LOGGING DATA",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "476a04b43a051fe2",
+        "type": "tab",
+        "label": "SENDING DATA",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "1f2d127a0efe4dd5",
+        "type": "tab",
+        "label": "Manual EXECSQL",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "274bce4369f07cdd",
+        "type": "tab",
+        "label": "Functions",
+        "disabled": true,
+        "info": "dtrack fUNCTION 2.3\n\nChange Log :\n1. Perubahan output pada function parsing VTG, RMC dan GGA menjadi format Float. -- Sebelumnya String.\n2. Format \"parseFloat\" pada function join dihilangkan, karna data yang diterima sudah dalam bentuk Float.\n3. Penambahan kondisi filter isNaN = 0 pada function Join. kecuali pada gpsDatetime.",
+        "env": []
+    },
+    {
+        "id": "ebd1271af3be5717",
+        "type": "tab",
+        "label": "Functions (Sebelumnya udah Disable)",
+        "disabled": true,
+        "info": "dtrack fUNCTION 2.3\n\nChange Log :\n1. Perubahan output pada function parsing VTG, RMC dan GGA menjadi format Float. -- Sebelumnya String.\n2. Format \"parseFloat\" pada function join dihilangkan, karna data yang diterima sudah dalam bentuk Float.\n3. Penambahan kondisi filter isNaN = 0 pada function Join. kecuali pada gpsDatetime.",
+        "env": []
+    },
+    {
+        "id": "ba1572da8a4b1f0f",
+        "type": "tab",
+        "label": "DTRACK",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "984b883ab2d16822",
+        "type": "serial-port",
+        "serialport": "/dev/ttyUSB_GPS",
+        "serialbaud": "4800",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "50",
+        "bin": "false",
+        "out": "interbyte",
+        "addchar": "",
+        "responsetimeout": "1000"
+    },
+    {
+        "id": "dded2f0d0a1e82bb",
+        "type": "serial-port",
+        "serialport": "/dev/ttyACM0",
+        "serialbaud": "4800",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "50",
+        "bin": "false",
+        "out": "interbyte",
+        "addchar": "",
+        "responsetimeout": "1000"
+    },
+    {
+        "id": "40d9af65744f3a4b",
+        "type": "ui_tab",
+        "name": "Configuration",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f4c9eebf3b6094f8",
+        "type": "ui_group",
+        "name": "Setting",
+        "tab": "40d9af65744f3a4b",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1dce4e4b4c3f2997",
+        "type": "sqlitedb",
+        "db": "/home/pi/DB_DTRACK.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "45e62e85469c3678",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "13388f1af28fe8d8",
+        "type": "sqlitedb",
+        "db": "/home/pi/DB_DTRACK.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "ab77295ad61155a9",
+        "type": "ui_tab",
+        "name": "Configuration",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f14e2cfe300327b8",
+        "type": "ui_group",
+        "name": "Admin",
+        "tab": "ab77295ad61155a9",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "4181246b51855dbc",
+        "type": "ui_group",
+        "name": "dashboard",
+        "tab": "ab77295ad61155a9",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d8b851f62a1b5fa4",
+        "type": "ui_tab",
+        "name": "Configuration",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "96b0e933a0a005eb",
+        "type": "ui_group",
+        "name": "Admin",
+        "tab": "d8b851f62a1b5fa4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ff5740b7478737f4",
+        "type": "ui_group",
+        "name": "dashboard",
+        "tab": "d8b851f62a1b5fa4",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ad283ea8f1c300f4",
+        "type": "ui_tab",
+        "name": "Configuration",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "807bd4b16b55d072",
+        "type": "ui_group",
+        "name": "Admin",
+        "tab": "ad283ea8f1c300f4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9d480d148e4c79c0",
+        "type": "ui_group",
+        "name": "dashboard",
+        "tab": "ad283ea8f1c300f4",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "4262791e90d91bdb",
+        "type": "ui_tab",
+        "name": "Configuration",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "bba73278c5e97140",
+        "type": "ui_tab",
+        "name": "Configuration",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6316666467772ce4",
+        "type": "ui_group",
+        "name": "Admin",
+        "tab": "bba73278c5e97140",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "50ed4ad40317c6b3",
+        "type": "ui_group",
+        "name": "dashboard",
+        "tab": "bba73278c5e97140",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "09d933270682a22c",
+        "type": "ui_tab",
+        "name": "Configuration",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "df54aba8222aceee",
+        "type": "ui_tab",
+        "name": "Configuration",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b9cd7152df9839f4",
+        "type": "Kafka Broker",
+        "name": "Server KPP",
+        "hosts": [
+            {
+                "host": "g-02-0001.kppmining.com",
+                "port": 9092
+            }
+        ],
+        "hostsEnvVar": "",
+        "connectTimeout": "10000",
+        "requestTimeout": "30000",
+        "autoConnect": "true",
+        "idleConnection": "5",
+        "reconnectOnIdle": "true",
+        "maxAsyncRequests": "10",
+        "checkInterval": "10",
+        "selfSign": true,
+        "usetls": false,
+        "useCredentials": false
+    },
+    {
+        "id": "baaf8922e2d7c647",
+        "type": "serial-port",
+        "serialport": "/dev/ttyACM0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "717c59f6f2d02fd2",
+        "type": "sqlitedb",
+        "db": "/home/pi/dataGPS.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "b0bc1f4dfb1add1f",
+        "type": "inject",
+        "z": "15158fa8ecb3c7d1",
+        "name": "InjectSetting",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "67cfd04cdfae210f",
+                "d1b1ce732b2fcfa1"
+            ]
+        ]
+    },
+    {
+        "id": "d1b1ce732b2fcfa1",
+        "type": "file in",
+        "z": "15158fa8ecb3c7d1",
+        "name": "GetSettingConfiguration",
+        "filename": "/home/pi/settingGPS.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "fe84d3b9092b899c",
+                "f8e2b8f1f773cc48"
+            ]
+        ]
+    },
+    {
+        "id": "fe84d3b9092b899c",
+        "type": "json",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 590,
+        "y": 120,
+        "wires": [
+            [
+                "fa6cf1749da29d73",
+                "8f04be5d5978658b"
+            ]
+        ]
+    },
+    {
+        "id": "fa6cf1749da29d73",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "setGlobal",
+        "rules": [
+            {
+                "t": "set",
+                "p": "VERSION",
+                "pt": "global",
+                "to": "payload.VERSION",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ICCID",
+                "pt": "global",
+                "to": "payload.ICCID",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "CODE",
+                "pt": "global",
+                "to": "payload.CODE",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "set",
+                "p": "TIME_LOGGING",
+                "pt": "global",
+                "to": "payload.TIME_LOGGING",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "UNIT_LOGGING",
+                "pt": "global",
+                "to": "payload.UNIT_LOGGING",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "TIME_SENDING",
+                "pt": "global",
+                "to": "payload.TIME_SENDING",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "UNIT_SENDING",
+                "pt": "global",
+                "to": "payload.UNIT_SENDING",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "URL1",
+                "pt": "global",
+                "to": "payload.URL1",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "URL2",
+                "pt": "global",
+                "to": "payload.URL2",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "URL3",
+                "pt": "global",
+                "to": "payload.URL3",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "URL4",
+                "pt": "global",
+                "to": "payload.URL4",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "URL5",
+                "pt": "global",
+                "to": "payload.URL5",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "URL6",
+                "pt": "global",
+                "to": "payload.URL6",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "MAX_SPEED",
+                "pt": "global",
+                "to": "payload.MAX_SPEED",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "DURATION_OVERSPEED",
+                "pt": "global",
+                "to": "payload.DURATION_OVERSPEED",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 120,
+        "wires": [
+            [
+                "563780bc4b0b3794"
+            ]
+        ]
+    },
+    {
+        "id": "ab5d47fd9df3d6b8",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Version",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "300",
+        "topic": "sid1",
+        "topicType": "str",
+        "x": 560,
+        "y": 260,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "612cb4aaebe83385",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "No SimCard",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "300",
+        "topic": "sid2",
+        "topicType": "str",
+        "x": 550,
+        "y": 300,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "5d243fa94ab33f81",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Code",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "300",
+        "topic": "sid3",
+        "topicType": "str",
+        "x": 570,
+        "y": 340,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "edaff9d28678f4cd",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "VERSION",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "VERSION",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "ab5d47fd9df3d6b8"
+            ]
+        ]
+    },
+    {
+        "id": "92e9ceef13d818c6",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "ICCID",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ICCID",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "612cb4aaebe83385"
+            ]
+        ]
+    },
+    {
+        "id": "4bf83ddbd5e148f9",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "CODE",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "CODE",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 340,
+        "wires": [
+            [
+                "5d243fa94ab33f81"
+            ]
+        ]
+    },
+    {
+        "id": "67cfd04cdfae210f",
+        "type": "link out",
+        "z": "15158fa8ecb3c7d1",
+        "name": "Out",
+        "links": [
+            "0a441dd5da11327f"
+        ],
+        "x": 275,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "0a441dd5da11327f",
+        "type": "link in",
+        "z": "15158fa8ecb3c7d1",
+        "name": "Inject",
+        "links": [
+            "67cfd04cdfae210f"
+        ],
+        "x": 55,
+        "y": 440,
+        "wires": [
+            [
+                "02f19794d25816ed"
+            ]
+        ]
+    },
+    {
+        "id": "182c1df453f011d3",
+        "type": "ui_dropdown",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Send Parameter",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "f4c9eebf3b6094f8",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "10 detik",
+                "value": "10",
+                "type": "str"
+            },
+            {
+                "label": "20 detik",
+                "value": "20",
+                "type": "str"
+            },
+            {
+                "label": "30 detik",
+                "value": 30,
+                "type": "num"
+            },
+            {
+                "label": "1 Menit",
+                "value": "60",
+                "type": "str"
+            },
+            {
+                "label": "2 Menit",
+                "value": "120",
+                "type": "str"
+            },
+            {
+                "label": "5 Menit",
+                "value": "300",
+                "type": "str"
+            },
+            {
+                "label": "10 Menit",
+                "value": "600",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "timesending",
+        "topicType": "str",
+        "x": 520,
+        "y": 660,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "b3b29dfc05abd7ef",
+        "type": "ui_dropdown",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Logging Parameter",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "f4c9eebf3b6094f8",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "10 detik",
+                "value": "10",
+                "type": "str"
+            },
+            {
+                "label": "20 detik",
+                "value": "20",
+                "type": "str"
+            },
+            {
+                "label": "30 detik",
+                "value": "30",
+                "type": "str"
+            },
+            {
+                "label": "1 Menit",
+                "value": "60",
+                "type": "str"
+            },
+            {
+                "label": "2 Menit",
+                "value": "120",
+                "type": "str"
+            },
+            {
+                "label": "5 Menit",
+                "value": "300",
+                "type": "str"
+            },
+            {
+                "label": "10 Menit",
+                "value": "600",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "timelogging",
+        "topicType": "str",
+        "x": 510,
+        "y": 620,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "9b7836bb61c5b068",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "PingPublic",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "ip1",
+        "topicType": "str",
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "48a712260ebd6db0",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "URL1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "URL1",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 380,
+        "wires": [
+            [
+                "9b7836bb61c5b068"
+            ]
+        ]
+    },
+    {
+        "id": "825000502baed0c4",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "URL3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "URL3",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 460,
+        "wires": [
+            [
+                "9045ea18c496af2c"
+            ]
+        ]
+    },
+    {
+        "id": "9045ea18c496af2c",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Send IP Public",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "ip3",
+        "topicType": "str",
+        "x": 540,
+        "y": 460,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "ec6dd5f6c592e3c0",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "TIME_LOGGING",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "TIME_LOGGING",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 620,
+        "wires": [
+            [
+                "b3b29dfc05abd7ef"
+            ]
+        ]
+    },
+    {
+        "id": "a29f6eca738792c7",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "TIME_SENDING",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "TIME_SENDING",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 660,
+        "wires": [
+            [
+                "182c1df453f011d3"
+            ]
+        ]
+    },
+    {
+        "id": "d6bb922b41c03d65",
+        "type": "ui_button",
+        "z": "15158fa8ecb3c7d1",
+        "name": "Set",
+        "group": "f4c9eebf3b6094f8",
+        "order": 13,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "label": "Set",
+        "tooltip": "Parameter will be implemented after sensor restart",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "go",
+        "topicType": "str",
+        "x": 770,
+        "y": 480,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "f310474306832003",
+        "type": "function",
+        "z": "15158fa8ecb3c7d1",
+        "name": "Store Data",
+        "func": "var sn1 = context.get(\"sid1\") || global.get(\"VERSION\")//0; //get from context or default to 0\nvar sn2 = context.get(\"sid2\") || global.get(\"ICCID\")//0; //get from context or default to 0\nvar sn3 = context.get(\"sid3\") || global.get(\"CODE\")//0; //get from context or default to 0\nvar url1 = context.get(\"url1\") || global.get(\"URL1\")//0; //get from context or default to 0\nvar url2 = context.get(\"url2\") || global.get(\"URL2\")//0; //get from context or default to 0\nvar url3 = context.get(\"url3\") || global.get(\"URL3\")//0; //get from context or default to 0\nvar url4 = context.get(\"url4\") || global.get(\"URL4\")//0; //get from context or default to 0\nvar url5 = context.get(\"url5\") || global.get(\"URL5\")//0; //get from context or default to 0\nvar url6 = context.get(\"url6\") || global.get(\"URL6\")//0; //get from context or default to 0\nvar tl = context.get(\"tl\") ||  global.get(\"TIME_LOGGING\")//0; \nvar ts = context.get(\"ts\") || global.get(\"TIME_SENDING\")//0;\nvar par1 = context.get(\"par1\") || global.get(\"MAX_SPEED\")//0; \nvar par2 = context.get(\"par2\") || global.get(\"DURATION_OVERSPEED\")//0; \n\nswitch (msg.topic){\n\n    case \"sid1\":\n        sid1 = msg.payload; \n                context.set(\"sid1\", sid1);//store in context for next time \n        return;\n    case \"sid2\":\n        sid2 = msg.payload; \n                context.set(\"sid2\", sid2);//store in context for next time \n        return;\n    case \"sid3\":\n        sid3 = msg.payload; \n                context.set(\"sid3\", sid3);//store in context for next time \n        return;\n    case \"ip1\":\n        url1 = msg.payload;\n        context.set(\"url1\", url1); //store in context for next time \n        return;\n    \n    case \"ip2\":\n        url2 = msg.payload;\n        context.set(\"url2\", url2); //store in context for next time \n        return;\n    \n    case \"ip3\":\n        url3 = msg.payload;\n        context.set(\"url3\", url3); //store in context for next time \n        return;\n    \n    case \"ip4\":\n        url4 = msg.payload;\n        context.set(\"url4\", url4); //store in context for next time \n        return;  \n     case \"ip5\":\n        url5 = msg.payload;\n        context.set(\"url5\", url5); //store in context for next time \n        return;  \n    case \"ip6\":\n        url6 = msg.payload;\n        context.set(\"url6\", url6); //store in context for next time \n        return;  \n    case \"timesending\":\n        ts = msg.payload;\n        context.set(\"ts\", ts); //store in context for next time \n        return;\n        \n    case \"timelogging\":\n        tl = msg.payload;\n        context.set(\"tl\", tl); //store in context for next time \n        return;\n        \n    case \"par1\":\n        par1 = msg.payload;\n        context.set(\"par1\", par1); //store in context for next time \n        return;\n        \n    case \"par2\":\n        par2 = msg.payload;\n        context.set(\"par2\", par2); //store in context for next time \n        return;\n    \n    case \"go\":\n     \n     msg.payload = \"{ \\n\"  + //n+\n     '\"VERSION\" :' +'\"'+sn1+'\" , \\n'+\n     '\"ICCID\" :' +'\"'+sn2+'\" , \\n'+\n     '\"CODE\" :' +'\"'+sn3+'\" ,\\n'+\n     '\"TIME_LOGGING\" :' +tl +' , \\n'+\n     '\"UNIT_LOGGING\" : \"seconds\" , \\n'+\n     '\"TIME_SENDING\" :' +ts +' , \\n'+\n     '\"UNIT_SENDING\" : \"seconds\" , \\n'+\n     '\"MAX_SPEED\" : '+ par1 +' , \\n'+\n     '\"DURATION_OVERSPEED\" : '+ par2 +' , \\n'+\n     '\"URL1\" :'+'\"'+ url1+'\" , \\n ' +\n     '\"URL2\" :'+'\"'+ url2+'\" , \\n ' +\n     '\"URL3\" :'+'\"'+ url3+'\" , \\n ' +\n     '\"URL4\" :'+'\"'+ url4+'\" , \\n ' +\n     '\"URL5\" :'+'\"'+ url5+'\" , \\n ' +\n     '\"URL6\" :'+'\"'+ url6+'\" }' \n     ;\n\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 420,
+        "wires": [
+            [
+                "e60a7d76b790166c"
+            ]
+        ]
+    },
+    {
+        "id": "e60a7d76b790166c",
+        "type": "file",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "filename": "/home/pi/settingGPS.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1010,
+        "y": 420,
+        "wires": [
+            [
+                "50738c7d2f61073e",
+                "8b3e9274dbb543ab"
+            ]
+        ]
+    },
+    {
+        "id": "50738c7d2f61073e",
+        "type": "link out",
+        "z": "15158fa8ecb3c7d1",
+        "name": "out-Inject",
+        "links": [
+            "87e0184679860ef8",
+            "8b2ceb8b434dde4b"
+        ],
+        "x": 1185,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "8b3e9274dbb543ab",
+        "type": "debug",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "87e0184679860ef8",
+        "type": "link in",
+        "z": "15158fa8ecb3c7d1",
+        "name": "inject-in",
+        "links": [
+            "50738c7d2f61073e"
+        ],
+        "x": 225,
+        "y": 160,
+        "wires": [
+            [
+                "d1b1ce732b2fcfa1"
+            ]
+        ]
+    },
+    {
+        "id": "563780bc4b0b3794",
+        "type": "link out",
+        "z": "15158fa8ecb3c7d1",
+        "name": "global-out",
+        "links": [
+            "04227b4fc93bb433",
+            "6ecc8ea8203c1411"
+        ],
+        "x": 905,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "02f19794d25816ed",
+        "type": "delay",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 120,
+        "y": 500,
+        "wires": [
+            [
+                "825000502baed0c4",
+                "48a712260ebd6db0",
+                "edaff9d28678f4cd",
+                "92e9ceef13d818c6",
+                "4bf83ddbd5e148f9",
+                "ec6dd5f6c592e3c0",
+                "a29f6eca738792c7",
+                "87ecf95c579d89f0",
+                "6577eeb4ccb831de",
+                "bf621e76c20fd985",
+                "d6f3d7aae89cf210",
+                "1d7045c237ba2323",
+                "9e3f5fe2cf7d0e85"
+            ]
+        ]
+    },
+    {
+        "id": "d8b9e18a29f7d550",
+        "type": "ui_button",
+        "z": "15158fa8ecb3c7d1",
+        "name": "Get",
+        "group": "f4c9eebf3b6094f8",
+        "order": 13,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "label": "Get",
+        "tooltip": "Parameter will be implemented after sensor restart",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "go",
+        "topicType": "str",
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "02f19794d25816ed"
+            ]
+        ]
+    },
+    {
+        "id": "761c4a0b836415c2",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Send IP local",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "ip4",
+        "topicType": "str",
+        "x": 550,
+        "y": 500,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "87ecf95c579d89f0",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "URL4",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "URL4",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 500,
+        "wires": [
+            [
+                "761c4a0b836415c2"
+            ]
+        ]
+    },
+    {
+        "id": "6577eeb4ccb831de",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "URL2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "URL2",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 420,
+        "wires": [
+            [
+                "fc7c08dfd9548c33"
+            ]
+        ]
+    },
+    {
+        "id": "fc7c08dfd9548c33",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Ping Local",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "ip2",
+        "topicType": "str",
+        "x": 550,
+        "y": 420,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "f8e2b8f1f773cc48",
+        "type": "debug",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8f04be5d5978658b",
+        "type": "debug",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "bf621e76c20fd985",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "MAX_SPEED",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "MAX_SPEED",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 700,
+        "wires": [
+            [
+                "6f676685e4b454b5"
+            ]
+        ]
+    },
+    {
+        "id": "d6f3d7aae89cf210",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "DURATION_OVERSPEED",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "DURATION_OVERSPEED",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 740,
+        "wires": [
+            [
+                "e212e96e4ed1144e"
+            ]
+        ]
+    },
+    {
+        "id": "6f676685e4b454b5",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Max Speed",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "300",
+        "topic": "par1",
+        "topicType": "str",
+        "x": 530,
+        "y": 700,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "e212e96e4ed1144e",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Duration Overspeed",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "300",
+        "topic": "par2",
+        "topicType": "str",
+        "x": 500,
+        "y": 740,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "6748d0a254b1ae37",
+        "type": "comment",
+        "z": "15158fa8ecb3c7d1",
+        "name": "Get Config File",
+        "info": "GetAllThe Setting File From /home/pi/settingGPS.json\nMake The GUI and Automatic Update the File",
+        "x": 140,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1d7045c237ba2323",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "URL5",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "URL5",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 540,
+        "wires": [
+            [
+                "b6ec94eaa2334593"
+            ]
+        ]
+    },
+    {
+        "id": "b6ec94eaa2334593",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Send API OverPublic",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "ip5",
+        "topicType": "str",
+        "x": 540,
+        "y": 540,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "9e3f5fe2cf7d0e85",
+        "type": "change",
+        "z": "15158fa8ecb3c7d1",
+        "name": "URL6",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "URL6",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 580,
+        "wires": [
+            [
+                "0abf7f4ede8d224a"
+            ]
+        ]
+    },
+    {
+        "id": "0abf7f4ede8d224a",
+        "type": "ui_text_input",
+        "z": "15158fa8ecb3c7d1",
+        "name": "",
+        "label": "Send API OverLocal",
+        "tooltip": "",
+        "group": "f4c9eebf3b6094f8",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "ip6",
+        "topicType": "str",
+        "x": 540,
+        "y": 580,
+        "wires": [
+            [
+                "f310474306832003"
+            ]
+        ]
+    },
+    {
+        "id": "90360b4629b00fde",
+        "type": "comment",
+        "z": "0f78185fea5227c6",
+        "name": "Logging NMEA to file and to SQLite",
+        "info": "",
+        "x": 540,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c4e2b147826bc086",
+        "type": "function",
+        "z": "0f78185fea5227c6",
+        "name": "FileNameDate",
+        "func": "var x = msg.topic;\nvar date = global.get(\"datelocal\");\nlet d = date.slice(0, 10);\nlet f = '/home/pi/logger/backup/backup_'+d+'.csv';\nmsg.filename=f;\nmsg.payload=x;\nreturn msg  ;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 120,
+        "wires": [
+            [
+                "fc39d27be85886a7"
+            ]
+        ]
+    },
+    {
+        "id": "5f56620e69122937",
+        "type": "inject",
+        "z": "0f78185fea5227c6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "1d8c02444a1049d7"
+            ]
+        ]
+    },
+    {
+        "id": "204c2b1671596202",
+        "type": "change",
+        "z": "0f78185fea5227c6",
+        "name": "RESULTDATA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "result",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [
+                "e95db433a884d6cc"
+            ]
+        ]
+    },
+    {
+        "id": "1d8c02444a1049d7",
+        "type": "function",
+        "z": "0f78185fea5227c6",
+        "name": "logging",
+        "func": "var tl = global.get(\"TIME_LOGGING\");\nvar ul = global.get(\"UNIT_LOGGING\");\nmsg.interval_value=tl;\nmsg.interval_unit=ul;\nmsg.payload=\"interval\";\nmsg.topic=\"interval_logging\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 80,
+        "wires": [
+            [
+                "a940ac6b4db7c432"
+            ]
+        ]
+    },
+    {
+        "id": "04227b4fc93bb433",
+        "type": "link in",
+        "z": "0f78185fea5227c6",
+        "name": "logging-in",
+        "links": [
+            "563780bc4b0b3794"
+        ],
+        "x": 235,
+        "y": 40,
+        "wires": [
+            [
+                "1d8c02444a1049d7"
+            ]
+        ]
+    },
+    {
+        "id": "fc39d27be85886a7",
+        "type": "file",
+        "z": "0f78185fea5227c6",
+        "name": "LoggerFile",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 970,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a940ac6b4db7c432",
+        "type": "configurable interval",
+        "z": "0f78185fea5227c6",
+        "name": "configurable interval",
+        "interval": 10,
+        "onstart": true,
+        "do_enable": true,
+        "msg": "ping",
+        "showstatus": true,
+        "unit": "seconds",
+        "statusformat": "YYYY-MM-D HH:mm:ss",
+        "x": 280,
+        "y": 240,
+        "wires": [
+            [
+                "204c2b1671596202",
+                "c0d465c77380e735"
+            ]
+        ]
+    },
+    {
+        "id": "957e7277789745b4",
+        "type": "sqlite",
+        "z": "0f78185fea5227c6",
+        "mydb": "13388f1af28fe8d8",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 790,
+        "y": 360,
+        "wires": [
+            [
+                "db2c7c4833d33e6c"
+            ]
+        ]
+    },
+    {
+        "id": "db2c7c4833d33e6c",
+        "type": "debug",
+        "z": "0f78185fea5227c6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c0d465c77380e735",
+        "type": "change",
+        "z": "0f78185fea5227c6",
+        "name": "OverMark",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "overmark",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 360,
+        "wires": [
+            [
+                "420e7000a8742d85"
+            ]
+        ]
+    },
+    {
+        "id": "5a6fd5af8cf68702",
+        "type": "sqlite",
+        "z": "0f78185fea5227c6",
+        "mydb": "13388f1af28fe8d8",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 710,
+        "y": 240,
+        "wires": [
+            [
+                "1be43d2f78512790"
+            ]
+        ]
+    },
+    {
+        "id": "1be43d2f78512790",
+        "type": "debug",
+        "z": "0f78185fea5227c6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7f660611fafc7f1f",
+        "type": "comment",
+        "z": "0f78185fea5227c6",
+        "name": "Logging data",
+        "info": "Logging Data into Database SQllite and File \n1. GPS Data\n2. Over Speed Data\n",
+        "x": 90,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8364973bc73ddbf1",
+        "type": "comment",
+        "z": "0f78185fea5227c6",
+        "name": "Logging OverSpeed to file and to SQLite",
+        "info": "",
+        "x": 580,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a7c937b5fae1f243",
+        "type": "function",
+        "z": "0f78185fea5227c6",
+        "name": "FileNameDate",
+        "func": "var x = msg.topic;\nvar date = global.get(\"datelocal\");\nlet d = date.slice(0, 10);\nlet f = '/home/pi/logger/backupover/backupover_'+d+'.csv';\nmsg.filename=f;\nmsg.payload=x;\nreturn msg  ;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 440,
+        "wires": [
+            [
+                "562dfc6f5784b95b"
+            ]
+        ]
+    },
+    {
+        "id": "562dfc6f5784b95b",
+        "type": "file",
+        "z": "0f78185fea5227c6",
+        "name": "LoggerFile",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1010,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e95db433a884d6cc",
+        "type": "switch",
+        "z": "0f78185fea5227c6",
+        "name": "InNotEmpty",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 550,
+        "y": 140,
+        "wires": [
+            [
+                "c4e2b147826bc086",
+                "5a6fd5af8cf68702"
+            ]
+        ]
+    },
+    {
+        "id": "420e7000a8742d85",
+        "type": "switch",
+        "z": "0f78185fea5227c6",
+        "name": "InNotEmpty",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 420,
+        "wires": [
+            [
+                "957e7277789745b4",
+                "a7c937b5fae1f243"
+            ]
+        ]
+    },
+    {
+        "id": "ce1db2720ed803db",
+        "type": "comment",
+        "z": "476a04b43a051fe2",
+        "name": "SendingData",
+        "info": "Sending All Data to WLAN first, if not connected send to WWAN (GSM)",
+        "x": 110,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "100247718f913e2b",
+        "type": "inject",
+        "z": "476a04b43a051fe2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "bb79b5f6a4a85f96"
+            ]
+        ]
+    },
+    {
+        "id": "6ecc8ea8203c1411",
+        "type": "link in",
+        "z": "476a04b43a051fe2",
+        "name": "sending-in",
+        "links": [
+            "563780bc4b0b3794",
+            "d2f4da9d19cf2350"
+        ],
+        "x": 345,
+        "y": 40,
+        "wires": [
+            [
+                "bb79b5f6a4a85f96"
+            ]
+        ]
+    },
+    {
+        "id": "bb79b5f6a4a85f96",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "sending",
+        "func": "var ts = global.get(\"TIME_SENDING\");\nvar us = global.get(\"UNIT_SENDING\");\nmsg.interval_value=ts;\nmsg.interval_unit=us;\nmsg.payload=\"interval\";\nmsg.topic=\"interval_sending\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "a27a5ffb5a221a7c"
+            ]
+        ]
+    },
+    {
+        "id": "a27a5ffb5a221a7c",
+        "type": "configurable interval",
+        "z": "476a04b43a051fe2",
+        "name": "configurable interval",
+        "interval": 10,
+        "onstart": true,
+        "do_enable": true,
+        "msg": "ping",
+        "showstatus": true,
+        "unit": "seconds",
+        "statusformat": "YYYY-MM-D HH:mm:ss",
+        "x": 520,
+        "y": 100,
+        "wires": [
+            [
+                "892da34961e5d6f9"
+            ]
+        ]
+    },
+    {
+        "id": "892da34961e5d6f9",
+        "type": "change",
+        "z": "476a04b43a051fe2",
+        "name": "urlPinglocal",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "URL2",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 100,
+        "wires": [
+            [
+                "8efe7020ed0e4d0c"
+            ]
+        ]
+    },
+    {
+        "id": "dc02cda7cfe7dca8",
+        "type": "http request",
+        "z": "476a04b43a051fe2",
+        "name": "ping Local",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 310,
+        "y": 240,
+        "wires": [
+            [
+                "6e4f1f40c034e777"
+            ]
+        ]
+    },
+    {
+        "id": "6e4f1f40c034e777",
+        "type": "switch",
+        "z": "476a04b43a051fe2",
+        "name": "CheckAPIOK",
+        "property": "payload.remark",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "c61c2a51b570f62c",
+                "80af47ed81942a75"
+            ],
+            [
+                "c2c9b4eb4005850f"
+            ]
+        ]
+    },
+    {
+        "id": "06a9bb101ac70566",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "GetTrackingDB",
+        "func": "var newMsg = {\n    topic : \"SELECT * FROM tracking order by id ASC  LIMIT 1000\"\n}\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 480,
+        "wires": [
+            [
+                "359de175433bfa2a"
+            ]
+        ]
+    },
+    {
+        "id": "359de175433bfa2a",
+        "type": "sqlite",
+        "z": "476a04b43a051fe2",
+        "mydb": "1dce4e4b4c3f2997",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 790,
+        "y": 480,
+        "wires": [
+            [
+                "81c16366b25e1b2b"
+            ]
+        ]
+    },
+    {
+        "id": "70b396b38d518a63",
+        "type": "http request",
+        "z": "476a04b43a051fe2",
+        "name": "post api",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1480,
+        "y": 180,
+        "wires": [
+            [
+                "b942915108607e7e",
+                "9fdbaf28e5892676"
+            ]
+        ]
+    },
+    {
+        "id": "a274d1c772c0c839",
+        "type": "debug",
+        "z": "476a04b43a051fe2",
+        "name": "LogSendAPI",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "fa3a22b98acce7c0",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "delete",
+        "func": "msg.topic = \"DELETE FROM tracking WHERE id <=\" + msg.payload.id;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 720,
+        "wires": [
+            [
+                "9efc51544590a369"
+            ]
+        ]
+    },
+    {
+        "id": "9efc51544590a369",
+        "type": "sqlite",
+        "z": "476a04b43a051fe2",
+        "mydb": "1dce4e4b4c3f2997",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 650,
+        "y": 720,
+        "wires": [
+            [
+                "a274d1c772c0c839"
+            ]
+        ]
+    },
+    {
+        "id": "7e62561f466f42e4",
+        "type": "http request",
+        "z": "476a04b43a051fe2",
+        "name": "post api",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1380,
+        "y": 480,
+        "wires": [
+            [
+                "9521b085761d24f5"
+            ]
+        ]
+    },
+    {
+        "id": "42849027fabc4d49",
+        "type": "http request",
+        "z": "476a04b43a051fe2",
+        "name": "ping public",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 330,
+        "y": 480,
+        "wires": [
+            [
+                "4157914e2828eab8"
+            ]
+        ]
+    },
+    {
+        "id": "4157914e2828eab8",
+        "type": "switch",
+        "z": "476a04b43a051fe2",
+        "name": "api ok",
+        "property": "payload.remark",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 470,
+        "y": 480,
+        "wires": [
+            [
+                "06a9bb101ac70566",
+                "33ce043abb1bd078"
+            ]
+        ]
+    },
+    {
+        "id": "80af47ed81942a75",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "GetTrackingDB",
+        "func": "var newMsg = {\n    topic : \"SELECT * FROM tracking order by id ASC  LIMIT 1000\"\n}\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 180,
+        "wires": [
+            [
+                "34327f4089432647"
+            ]
+        ]
+    },
+    {
+        "id": "34327f4089432647",
+        "type": "sqlite",
+        "z": "476a04b43a051fe2",
+        "mydb": "1dce4e4b4c3f2997",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 830,
+        "y": 180,
+        "wires": [
+            [
+                "32b92831eb37a98b"
+            ]
+        ]
+    },
+    {
+        "id": "a54954e35b079afb",
+        "type": "link in",
+        "z": "476a04b43a051fe2",
+        "name": "In Ping Public",
+        "links": [
+            "e13ed6bf382b359d",
+            "c2c9b4eb4005850f"
+        ],
+        "x": 75,
+        "y": 480,
+        "wires": [
+            [
+                "85289d35544117a5"
+            ]
+        ]
+    },
+    {
+        "id": "58acb72981418593",
+        "type": "link in",
+        "z": "476a04b43a051fe2",
+        "name": "In Ping Local",
+        "links": [
+            "8efe7020ed0e4d0c"
+        ],
+        "x": 195,
+        "y": 240,
+        "wires": [
+            [
+                "dc02cda7cfe7dca8"
+            ]
+        ]
+    },
+    {
+        "id": "28a3e72f38ac9200",
+        "type": "debug",
+        "z": "476a04b43a051fe2",
+        "name": "ok",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1650,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8efe7020ed0e4d0c",
+        "type": "link out",
+        "z": "476a04b43a051fe2",
+        "name": "local- Out",
+        "mode": "link",
+        "links": [
+            "58acb72981418593"
+        ],
+        "x": 835,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c2c9b4eb4005850f",
+        "type": "link out",
+        "z": "476a04b43a051fe2",
+        "name": "Public-Out",
+        "mode": "link",
+        "links": [
+            "a54954e35b079afb"
+        ],
+        "x": 435,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "05993f1a13d1b788",
+        "type": "comment",
+        "z": "476a04b43a051fe2",
+        "name": "Connectedto Local",
+        "info": "Check wheater API Server Local Reply Ok, if not Processed to Public",
+        "x": 250,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "76b5866c107af63c",
+        "type": "comment",
+        "z": "476a04b43a051fe2",
+        "name": "Connectedto Public",
+        "info": "Check wheater API Server Public Reply Ok, if not do nothing",
+        "x": 190,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "57191025f1dd1fa4",
+        "type": "link out",
+        "z": "476a04b43a051fe2",
+        "name": "GoToAPILocal",
+        "mode": "link",
+        "links": [
+            "e62ddfe5a20801d2"
+        ],
+        "x": 1755,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "381262ba6c033a26",
+        "type": "link out",
+        "z": "476a04b43a051fe2",
+        "name": "GoToAPIPublic",
+        "mode": "link",
+        "links": [
+            "e62ddfe5a20801d2"
+        ],
+        "x": 1655,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "e62ddfe5a20801d2",
+        "type": "link in",
+        "z": "476a04b43a051fe2",
+        "name": "DeleteAPIafterSending",
+        "links": [
+            "381262ba6c033a26",
+            "57191025f1dd1fa4"
+        ],
+        "x": 75,
+        "y": 720,
+        "wires": [
+            [
+                "4e34c49bb4f3c6d4"
+            ]
+        ]
+    },
+    {
+        "id": "b942915108607e7e",
+        "type": "debug",
+        "z": "476a04b43a051fe2",
+        "name": "ok",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1590,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4e34c49bb4f3c6d4",
+        "type": "delay",
+        "z": "476a04b43a051fe2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 220,
+        "y": 720,
+        "wires": [
+            [
+                "559a320f3536bc2f",
+                "fa3a22b98acce7c0"
+            ]
+        ]
+    },
+    {
+        "id": "1d103641f7fd354f",
+        "type": "change",
+        "z": "476a04b43a051fe2",
+        "name": "urlAPIlocal",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "URL4",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1310,
+        "y": 180,
+        "wires": [
+            [
+                "70b396b38d518a63",
+                "2c812a3b7fd6c7ea"
+            ]
+        ]
+    },
+    {
+        "id": "d6e0a8562b0a87a6",
+        "type": "change",
+        "z": "476a04b43a051fe2",
+        "name": "urlAPIPublic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "URL3",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 480,
+        "wires": [
+            [
+                "7e62561f466f42e4"
+            ]
+        ]
+    },
+    {
+        "id": "c61c2a51b570f62c",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "GetMarkDB",
+        "func": "var newMsg = {\n    topic : \"SELECT * FROM mark order by id ASC  LIMIT 1000\"\n}\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 240,
+        "wires": [
+            [
+                "9b90c3a2e131777e"
+            ]
+        ]
+    },
+    {
+        "id": "9b90c3a2e131777e",
+        "type": "sqlite",
+        "z": "476a04b43a051fe2",
+        "mydb": "1dce4e4b4c3f2997",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 830,
+        "y": 240,
+        "wires": [
+            [
+                "f73523128cd459cc"
+            ]
+        ]
+    },
+    {
+        "id": "b3c5fd6d26d2fbe5",
+        "type": "change",
+        "z": "476a04b43a051fe2",
+        "name": "urlOverlocal",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "URL6",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1290,
+        "y": 240,
+        "wires": [
+            [
+                "bd9a188705e0b884"
+            ]
+        ]
+    },
+    {
+        "id": "33ce043abb1bd078",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "GetMarkDB",
+        "func": "var newMsg = {\n    topic : \"SELECT * FROM mark order by id ASC  LIMIT 1000\"\n}\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 540,
+        "wires": [
+            [
+                "d31f48a1ec268781"
+            ]
+        ]
+    },
+    {
+        "id": "d31f48a1ec268781",
+        "type": "sqlite",
+        "z": "476a04b43a051fe2",
+        "mydb": "1dce4e4b4c3f2997",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 790,
+        "y": 540,
+        "wires": [
+            [
+                "49518bc7f9f6670c"
+            ]
+        ]
+    },
+    {
+        "id": "10133aa5367f522e",
+        "type": "change",
+        "z": "476a04b43a051fe2",
+        "name": "urlOverPublic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "URL5",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 540,
+        "wires": [
+            [
+                "e8cb0fd580b65aa7"
+            ]
+        ]
+    },
+    {
+        "id": "32b92831eb37a98b",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "Deletenull",
+        "func": "var data =msg.payload;\nif (data!==\"\") {\n    msg.payload = data;\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 180,
+        "wires": [
+            [
+                "b6a883d5fec1eeec"
+            ]
+        ]
+    },
+    {
+        "id": "f73523128cd459cc",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "Deletenull",
+        "func": "var data =msg.payload;\nif (data!==\"\") {\n    msg.payload = data;\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 240,
+        "wires": [
+            [
+                "141ecc9b62c9e3e8"
+            ]
+        ]
+    },
+    {
+        "id": "81c16366b25e1b2b",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "deletenull",
+        "func": "var data =msg.payload;\nif (data!==\"\") {\n    msg.payload = data;\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 480,
+        "wires": [
+            [
+                "2f4b8ff6625d5874"
+            ]
+        ]
+    },
+    {
+        "id": "49518bc7f9f6670c",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "deletenull",
+        "func": "var data =msg.payload;\nif (data!==\"\") {\n    msg.payload = data;\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 540,
+        "wires": [
+            [
+                "7f0fd6ebe56a82ff"
+            ]
+        ]
+    },
+    {
+        "id": "b6a883d5fec1eeec",
+        "type": "switch",
+        "z": "476a04b43a051fe2",
+        "name": "IsNotEmpty",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1150,
+        "y": 180,
+        "wires": [
+            [
+                "1d103641f7fd354f"
+            ]
+        ]
+    },
+    {
+        "id": "141ecc9b62c9e3e8",
+        "type": "switch",
+        "z": "476a04b43a051fe2",
+        "name": "InNotEmpty",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1130,
+        "y": 240,
+        "wires": [
+            [
+                "b3c5fd6d26d2fbe5"
+            ]
+        ]
+    },
+    {
+        "id": "2f4b8ff6625d5874",
+        "type": "switch",
+        "z": "476a04b43a051fe2",
+        "name": "InNotEmpty",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1070,
+        "y": 480,
+        "wires": [
+            [
+                "d6e0a8562b0a87a6"
+            ]
+        ]
+    },
+    {
+        "id": "7f0fd6ebe56a82ff",
+        "type": "switch",
+        "z": "476a04b43a051fe2",
+        "name": "InNotEmpty",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1070,
+        "y": 540,
+        "wires": [
+            [
+                "10133aa5367f522e"
+            ]
+        ]
+    },
+    {
+        "id": "85289d35544117a5",
+        "type": "change",
+        "z": "476a04b43a051fe2",
+        "name": "urlPingPublic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "URL1",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 170,
+        "y": 480,
+        "wires": [
+            [
+                "42849027fabc4d49"
+            ]
+        ]
+    },
+    {
+        "id": "d4175cf836cea5ce",
+        "type": "comment",
+        "z": "476a04b43a051fe2",
+        "name": "DeleteDatabase",
+        "info": "AfterSendTheData, Delete all the data on database",
+        "x": 200,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "c8dec56fa996fcfb",
+        "type": "function",
+        "z": "476a04b43a051fe2",
+        "name": "delete",
+        "func": "msg.topic = \"DELETE FROM mark WHERE id <=\" + msg.payload.id;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 780,
+        "wires": [
+            [
+                "5b85a1bf0168c193"
+            ]
+        ]
+    },
+    {
+        "id": "5b85a1bf0168c193",
+        "type": "sqlite",
+        "z": "476a04b43a051fe2",
+        "mydb": "1dce4e4b4c3f2997",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 650,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c812a3b7fd6c7ea",
+        "type": "debug",
+        "z": "476a04b43a051fe2",
+        "name": "url",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1390,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "9521b085761d24f5",
+        "type": "switch",
+        "z": "476a04b43a051fe2",
+        "name": "post ok",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1520,
+        "y": 480,
+        "wires": [
+            [
+                "381262ba6c033a26",
+                "28a3e72f38ac9200"
+            ]
+        ]
+    },
+    {
+        "id": "9fdbaf28e5892676",
+        "type": "switch",
+        "z": "476a04b43a051fe2",
+        "name": "post ok",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1640,
+        "y": 180,
+        "wires": [
+            [
+                "57191025f1dd1fa4"
+            ]
+        ]
+    },
+    {
+        "id": "559a320f3536bc2f",
+        "type": "debug",
+        "z": "476a04b43a051fe2",
+        "name": "LogSendAPI",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "bd9a188705e0b884",
+        "type": "http request",
+        "z": "476a04b43a051fe2",
+        "name": "post api",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1460,
+        "y": 240,
+        "wires": [
+            [
+                "07acfd392bf1b5a8"
+            ]
+        ]
+    },
+    {
+        "id": "e8cb0fd580b65aa7",
+        "type": "http request",
+        "z": "476a04b43a051fe2",
+        "name": "post api",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 1400,
+        "y": 540,
+        "wires": [
+            [
+                "813770f33e50a1e3"
+            ]
+        ]
+    },
+    {
+        "id": "07acfd392bf1b5a8",
+        "type": "switch",
+        "z": "476a04b43a051fe2",
+        "name": "post ok",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1620,
+        "y": 240,
+        "wires": [
+            [
+                "86f4f0a1a291af51"
+            ]
+        ]
+    },
+    {
+        "id": "813770f33e50a1e3",
+        "type": "switch",
+        "z": "476a04b43a051fe2",
+        "name": "post ok",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1540,
+        "y": 540,
+        "wires": [
+            [
+                "f186b066ba61682a"
+            ]
+        ]
+    },
+    {
+        "id": "a66d450a9106d708",
+        "type": "link in",
+        "z": "476a04b43a051fe2",
+        "name": "DeleteAPIOverafterSending",
+        "links": [
+            "86f4f0a1a291af51",
+            "f186b066ba61682a"
+        ],
+        "x": 75,
+        "y": 780,
+        "wires": [
+            [
+                "2045e13ba41d5b96"
+            ]
+        ]
+    },
+    {
+        "id": "2045e13ba41d5b96",
+        "type": "delay",
+        "z": "476a04b43a051fe2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 220,
+        "y": 780,
+        "wires": [
+            [
+                "c8dec56fa996fcfb"
+            ]
+        ]
+    },
+    {
+        "id": "86f4f0a1a291af51",
+        "type": "link out",
+        "z": "476a04b43a051fe2",
+        "name": "GoToAPIOverLocal",
+        "mode": "link",
+        "links": [
+            "a66d450a9106d708"
+        ],
+        "x": 1755,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f186b066ba61682a",
+        "type": "link out",
+        "z": "476a04b43a051fe2",
+        "name": "GoToAPIOverPublic",
+        "mode": "link",
+        "links": [
+            "a66d450a9106d708"
+        ],
+        "x": 1645,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "54e84f4b44368b81",
+        "type": "sqlite",
+        "z": "1f2d127a0efe4dd5",
+        "mydb": "1dce4e4b4c3f2997",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 310,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "04187ff3f5f234fd",
+        "type": "inject",
+        "z": "1f2d127a0efe4dd5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DELETE FROM tracking",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "54e84f4b44368b81"
+            ]
+        ]
+    },
+    {
+        "id": "3ed15415c1b0dcd6",
+        "type": "inject",
+        "z": "1f2d127a0efe4dd5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "CREATE TABLE \"mark\" ( \t\"id\"\tINTEGER NOT NULL UNIQUE, \t\"codenumber\"\tTEXT, \t\"longitude\"\tTEXT, \t\"latitude\"\tTEXT, \t\"speed\"\tTEXT, \t\"heading\"\tTEXT, \t\"gpsDatetime\"\tTEXT, \t\"satellite\"\tTEXT, \t\"datetime\"\tTEXT, \t\"simcard\"\tTEXT, \t\"version\"\tTEXT, \t\"altitude\"\tTEXT, \t\"status\"\tTEXT, \tPRIMARY KEY(\"id\" AUTOINCREMENT) );",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "4aa5261d01c967f3"
+            ]
+        ]
+    },
+    {
+        "id": "3085e81b374ebf38",
+        "type": "comment",
+        "z": "1f2d127a0efe4dd5",
+        "name": "CREATE TABLE MARK",
+        "info": "",
+        "x": 140,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4aa5261d01c967f3",
+        "type": "sqlite",
+        "z": "1f2d127a0efe4dd5",
+        "mydb": "13388f1af28fe8d8",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 310,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b12c2a8786f1d39",
+        "type": "comment",
+        "z": "1f2d127a0efe4dd5",
+        "name": "Delete table Tracking",
+        "info": "",
+        "x": 120,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "59bd4b89ce343370",
+        "type": "comment",
+        "z": "1f2d127a0efe4dd5",
+        "name": "Delete table Mark",
+        "info": "",
+        "x": 120,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e18e325889475c74",
+        "type": "sqlite",
+        "z": "1f2d127a0efe4dd5",
+        "mydb": "1dce4e4b4c3f2997",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 370,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "044c588a90f2c0f1",
+        "type": "inject",
+        "z": "1f2d127a0efe4dd5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DELETE FROM mark",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "e18e325889475c74"
+            ]
+        ]
+    },
+    {
+        "id": "a39cfe5591df4982",
+        "type": "inject",
+        "z": "1f2d127a0efe4dd5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "CREATE TABLE \"tracking\" ( \t\"id\"\tINTEGER NOT NULL UNIQUE, \t\"codenumber\"\tTEXT, \t\"longitude\"\tTEXT, \t\"latitude\"\tTEXT, \t\"speed\"\tTEXT, \t\"heading\"\tTEXT, \t\"gpsDatetime\"\tTEXT, \t\"satellite\"\tTEXT, \t\"datetime\"\tTEXT, \t\"simcard\"\tTEXT, \t\"version\"\tTEXT, \t\"altitude\"\tTEXT, \tPRIMARY KEY(\"id\" AUTOINCREMENT) );",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 380,
+        "wires": [
+            [
+                "5548f4a83cb7afef"
+            ]
+        ]
+    },
+    {
+        "id": "81e1ee3123fc5ad5",
+        "type": "comment",
+        "z": "1f2d127a0efe4dd5",
+        "name": "CREATE TABLE TRACKING",
+        "info": "",
+        "x": 160,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5548f4a83cb7afef",
+        "type": "sqlite",
+        "z": "1f2d127a0efe4dd5",
+        "mydb": "13388f1af28fe8d8",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 310,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c50a710fc68d3b8",
+        "type": "inject",
+        "z": "1f2d127a0efe4dd5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DROP TABLE \"mark\"",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 280,
+        "wires": [
+            [
+                "f8134861d3067366"
+            ]
+        ]
+    },
+    {
+        "id": "f8134861d3067366",
+        "type": "sqlite",
+        "z": "1f2d127a0efe4dd5",
+        "mydb": "13388f1af28fe8d8",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 750,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e1bc67ebae59b9e5",
+        "type": "inject",
+        "z": "1f2d127a0efe4dd5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DROP TABLE \"tracking\"",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 380,
+        "wires": [
+            [
+                "dc91641c16cdc637"
+            ]
+        ]
+    },
+    {
+        "id": "dc91641c16cdc637",
+        "type": "sqlite",
+        "z": "1f2d127a0efe4dd5",
+        "mydb": "13388f1af28fe8d8",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "db",
+        "x": 750,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "839754ca2f36563b",
+        "type": "comment",
+        "z": "1f2d127a0efe4dd5",
+        "name": "DROP TABLE MARK",
+        "info": "",
+        "x": 580,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "259e9a1c4cc3ecac",
+        "type": "comment",
+        "z": "1f2d127a0efe4dd5",
+        "name": "DROP TABLE TRACKING",
+        "info": "",
+        "x": 590,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a38de58bf2dc8c20",
+        "type": "inject",
+        "z": "274bce4369f07cdd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "13979533aff46c34",
+                "9d7164f682355cbc"
+            ]
+        ]
+    },
+    {
+        "id": "6fb074a82dc2d6ed",
+        "type": "switch",
+        "z": "274bce4369f07cdd",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "$GPGGA",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "$GNGGA",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "$GPRMC",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "$GNRMC",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "$GPVTG",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "$GNVTG",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "c80995e0f3b78838"
+            ],
+            [
+                "c80995e0f3b78838"
+            ],
+            [
+                "0e8bfb284cb57d9e"
+            ],
+            [
+                "0e8bfb284cb57d9e"
+            ],
+            [
+                "85b2c6ca382861db"
+            ],
+            [
+                "85b2c6ca382861db"
+            ]
+        ]
+    },
+    {
+        "id": "23fdb10f46bcf19c",
+        "type": "debug",
+        "z": "274bce4369f07cdd",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3b2c87d132f223e7",
+        "type": "split",
+        "z": "274bce4369f07cdd",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "6fb074a82dc2d6ed"
+            ]
+        ]
+    },
+    {
+        "id": "c80995e0f3b78838",
+        "type": "function",
+        "z": "274bce4369f07cdd",
+        "name": "GGA",
+        "func": "//Sample Data : $GPGGA,172814.0,3723.46587704,N,12202.26957864,W,2,6,1.2,18.893,M,-25.669,M,2.0,0031*4F\n\nvar Data = msg.payload.split(\"*\").join(\",\").split(\",\");\n\n\n//Message ID  \nmsg.payload.DataA = Data[0]; // $GPGGA\n\n//UTC of position fix \nmsg.payload.DataB = Data[1]; // 172814.0\n\n//Position\nmsg.payload.DataC = Data[2]; //Latitude : 3723.46587704\nmsg.payload.DataD = Data[3]; //Direction of latitude : N (N: North; S: South)\nmsg.payload.DataE = Data[4]; //Longitude : 12202.26957864\nmsg.payload.DataF = Data[5]; //\tDirection of longitude: W (E: East; W: West)\n\n//GPS Quality indicator (0: Fix not valid; 1: GPS fix; 2: Differential GPS fix, OmniSTAR VBS; \n//4: Real-Time Kinematic, fixed integers; \n//5: Real-Time Kinematic, float integers, OmniSTAR XP/HP or Location RTK)\nmsg.payload.DataG = Data[6]; // 2 \n\n//Number of SVs in use, range from 00 through to 24+\nmsg.payload.DataH = Data[7]; // 6\n\n//HDOP\nmsg.payload.DataI = Data[8]; // 1.2\n\n//Height\nmsg.payload.DataJ = Data[9]; // Orthometric height (MSL reference) : 18.893\nmsg.payload.DataK = Data[10]; // Unit of measure for orthometric height is meters : M\nmsg.payload.DataL = Data[11]; // Geoid separation : -25.669\nmsg.payload.DataM = Data[12]; // Geoid separation measured in meters : M\n\n//Age of differential GPS data record, Type 1 or Type 9. Null field when DGPS is not used\nmsg.payload.DataN = Data[13]; // 2.0\n\n//Reference station ID, range 0000-4095. A null field when any reference station ID is selected and no corrections are received.\n//When using OmniSTAR services, the Reference Station ID indicates the following services: VBS 100=VBS; 1000=HP; 1001 = HP/XP (Orbits) ; \n//1002 = HP/G2 (Orbits); 1008 = XP (GPS); 1012 = G2 (GPS); 1013 = G2 (GPS/GLONASS); 1014 = G2 (GLONASS); 1016 = HP/XP (GPS); \n//1020 = HP/G2 (GPS) ; 1021 = HP/G2 (GPS/GLONASS).\nmsg.payload.DataO = Data[14]; // 0031\n\n//The checksum data, always begins with *\nmsg.payload.DataP = Data[15]; //*4F\n\nvar lat = \"\" ;\nvar lon = \"\";\n\n//Parameter\tValue\tUnit\tDescription\n//Lon\t10648.26725\tdddmm.mmmm\tLongitude\n//Longitude convresion\nvar lonsplit = Data[4].split(\"\");\nvar lon1 = lonsplit[0]+lonsplit[1]+lonsplit[2];\nvar lon2 = parseFloat(lon1);\nvar lon3 = parseFloat((lonsplit[3]+lonsplit[4]+lonsplit[5]+lonsplit[6]+\n          lonsplit[7]+lonsplit[8]+lonsplit[9]+lonsplit[10]));\nvar lon4 = parseFloat(lon3/60).toFixed(4);\nvar lon5 = parseFloat(lon4);\nvar lon6 = lon2 + lon5;\n\n//Change to West\nif (Data[5] == \"W\") {\nlon = lon6*(-1);\n} else {lon = lon6}\n\n\n//Lat\t0614.43385\tddmm.mmmm\tLatitude\n//Latitude convresion\nvar latsplit = Data[2].split(\"\");\nvar lat1 = latsplit[0]+latsplit[1];\nvar lat2 = parseFloat(lat1);\nvar lat3 = parseFloat((latsplit[2]+latsplit[3]+latsplit[4]+latsplit[5]+latsplit[6]+\n          latsplit[7]+latsplit[8]+latsplit[9]));\nvar lat4 = parseFloat(lat3/60).toFixed(4);\nvar lat5 = parseFloat(lat4);\nvar lat6 = lat2 + lat5;\n\n//Lat change to S\nif (Data[3] == \"S\") {\nlat = (lat6*(-1));\n} else {lat = lat6}\n\n\n\nmsg = {};\nmsg2 = {};\nmsg.sentence = Data[0];\nmsg.lat = lat;\nmsg.lon = lon;\nmsg.GPSQuality = parseFloat(Data[6]);\nmsg.numSat = parseFloat(Data[7]);\nmsg.horDilution = Data[8];\nmsg.alt = parseFloat(Data[9]);\nmsg.geoidalSep = parseFloat(Data[11]);\nmsg.differentialAge = Data[13];\nmsg.differentialRefStn = Data[14];\n\n\nmsg.topic = \"gga\";\n\nmsg.payload = {\"sentence\":msg.sentence,\"lat\":lat,\"lon\":lon,\"GPSQuality\":msg.GPSQuality,\"numSat\":msg.numSat,\"altOrtho\":msg.alt,\"geoidalSep\":msg.geoidalSep,\"differentialAge\":msg.differentialAge,\"differentialRefStn\":msg.differentialRefStn};\n\nmsg2.payload = Data;\n\nreturn [msg,msg2];\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 140,
+        "wires": [
+            [
+                "c0af0f435a18affa",
+                "f73ae5c653d3d00c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0e8bfb284cb57d9e",
+        "type": "function",
+        "z": "274bce4369f07cdd",
+        "name": "RMC",
+        "func": "//Sample Data : $GPRMC,123519,A,4807.038,N,01131.000,E,022.4,084.4,230394,003.1,W*6A\n\nvar Data = msg.payload.split(\"*\").join(\",\").split(\",\");\n\n\n//Message ID  \nmsg.payload.DataA = Data[0]; // $GPRMC\n\n//UTC of position fix \nmsg.payload.DataB = Data[1]; // 123519\n\n//Status A=active or V=void\nmsg.payload.DataC = Data[2]; // A\n\n//Position\nmsg.payload.DataD = Data[3]; //Latitude : 4807.038\nmsg.payload.DataE = Data[4]; //Direction of latitude : N (N: North; S: South)\nmsg.payload.DataF = Data[5]; //Longitude : 01131.000\nmsg.payload.DataG = Data[6]; //\tDirection of longitude: E (E: East; W: West)\n\n//Speed over the ground in knots\nmsg.payload.DataH = Data[7]; // 022.4 \n\n//Track angle in degrees (True)\nmsg.payload.DataI = Data[8]; // 084.4\n\n//Date\nmsg.payload.DataJ = Data[9]; // 230394\n\n//Magnetic variation in degrees\nmsg.payload.DataK = Data[10]; // 003.1\n\nmsg.payload.DataL = Data[11]; // W\n\n//The checksum data, always begins with *\nmsg.payload.DataM = Data[12]; // *6A\n\nvar lat = \"\" ;\nvar lon = \"\";\n\n//Parameter\tValue\tUnit\tDescription\n//Lon\t10648.26725\tdddmm.mmmm\tLongitude\n//Longitude convresion\nvar lonsplit = Data[5].split(\"\");\nvar lon1 = lonsplit[0]+lonsplit[1]+lonsplit[2];\nvar lon2 = parseFloat(lon1);\nvar lon3 = parseFloat((lonsplit[3]+lonsplit[4]+lonsplit[5]+lonsplit[6]+\n          lonsplit[7]+lonsplit[8]+lonsplit[9]+lonsplit[10]));\nvar lon4 = parseFloat(lon3/60).toFixed(4);\nvar lon5 = parseFloat(lon4);\nvar lon6 = lon2 + lon5;\n\n//Change to West\nif (Data[6] == \"W\") {\nlon = lon6*(-1);\n} else {lon = lon6}\n\n\n//Lat\t0614.43385\tddmm.mmmm\tLatitude\n//Latitude convresion\nvar latsplit = Data[3].split(\"\");\nvar lat1 = latsplit[0]+latsplit[1];\nvar lat2 = parseFloat(lat1);\nvar lat3 = parseFloat((latsplit[2]+latsplit[3]+latsplit[4]+latsplit[5]+latsplit[6]+\n          latsplit[7]+latsplit[8]+latsplit[9]));\nvar lat4 = parseFloat(lat3/60).toFixed(4);\nvar lat5 = parseFloat(lat4);\nvar lat6 = lat2 + lat5;\n\n//Lat change to S\nif (Data[4] == \"S\") {\nlat = (lat6*(-1));\n} else {lat = lat6}\n\n//DateTime\nvar utc = Data[1].split(\"\");\nvar time = utc[0]+utc[1]+\":\"+utc[2]+utc[3]+\":\"+utc[4]+utc[5];\nvar date = Data[9].split(\"\");\nvar DD = date[0]+date[1];\nvar MM = date[2]+date[3];\nvar YY = date[4]+date[5];\nvar Datetimestamp = 20 + YY +\"-\"+ MM +\"-\"+ DD +\" \"+ time;\n\n\nmsg = {};\nmsg2 = {};\nmsg.sentence = Data[0];\nmsg.statuss = Data[2];\nmsg.lat = lat;\nmsg.lon = lon;\nmsg.speedKnots = parseFloat(Data[7]);\nmsg.trackTrue = Data[8]\nmsg.date = Data[9];\nmsg.variation = Data[10];\nmsg.timestamp = Datetimestamp;\n\nmsg.topic = \"rmc\";\n\nmsg.payload = {\"sentence\":msg.sentence,\"status\":msg.statuss,\"lat\":lat,\"lon\":lon,\"speedKnots\":msg.speedKnots,\"trackTrue\":msg.trackTrue,\"date\":msg.date,\"variation\":msg.variation,\"timestamp\":msg.timestamp};\n\nmsg2.payload = Data;\n\nreturn [msg,msg2];\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 180,
+        "wires": [
+            [
+                "c0af0f435a18affa",
+                "f73ae5c653d3d00c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "85b2c6ca382861db",
+        "type": "function",
+        "z": "274bce4369f07cdd",
+        "name": "VTG",
+        "func": "//Sample Data : $GPVTG,140.88,T,,M,8.04,N,14.89,K,D*05\n\nvar Data = msg.payload.split(\"*\").join(\",\").split(\",\");\n\n\n//Message ID  \nmsg.payload.DataA = Data[0]; //$GPVTG\n\n//Track made good (degrees true)\nmsg.payload.DataB = Data[1]; //140.88\n\n//T: track made good is relative to true north\nmsg.payload.DataC = Data[2]; //T\n\n//Track made good (degrees magnetic)\nmsg.payload.DataD = Data[3];\n\n//M: track made good is relative to magnetic north\nmsg.payload.DataE = Data[4]; //M\n\n//Speed, in knots\nmsg.payload.DataF = Data[5]; //8.04\n\n//N: speed is measured in knots\nmsg.payload.DataG = Data[6]; // N\n\n//Speed over ground in kilometers/hour (kph)\nmsg.payload.DataH = Data[7]; //18.49\n\n//K: speed over ground is measured in kph\nmsg.payload.DataI = Data[8]; // K\n\n//Mode indicator A: Autonomous mode D: Differential mode E: Estimated (dead reckoning) mode M: Manual Input mode S: Simulator mode N: Data not valid\nmsg.payload.DataJ = Data[9]; // D\n\n//The checksum data, always begins with *\nmsg.payload.DataK = Data[10]; // *05\n\nmsg = {};\nmsg2 = {};\nmsg.sentence = Data[0];\nmsg.trackTrue = Data[1];\nmsg.trackMagnetic = Data[3];\nmsg.speedKnots = parseFloat(Data[5]);\nmsg.speedGround = parseFloat(Data[7]);\nmsg.modeindicator = Data[9];\n\nmsg.topic = \"vtg\";\n\nmsg.payload = {\"sentence\":msg.sentence,\"trackTrue\":msg.trackTrue,\"trackMagnetic\":msg.trackMagnetic,\"speedKnots\":msg.speedKnots,\"speedGround\":msg.speedGround,\"modeindicator\":msg.modeindicator};\n\nmsg2.payload = Data;\n\nreturn [msg,msg2];\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 240,
+        "wires": [
+            [
+                "c0af0f435a18affa",
+                "f73ae5c653d3d00c",
+                "978cf9352be2a727"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "13979533aff46c34",
+        "type": "moment",
+        "z": "274bce4369f07cdd",
+        "name": "",
+        "topic": "datelocal",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Jakarta",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "YYYY-MM-DD HH:mm:ss",
+        "locale": "en-US",
+        "output": "datelocal",
+        "outputType": "global",
+        "outTz": "Asia/Singapore",
+        "x": 520,
+        "y": 40,
+        "wires": [
+            [
+                "c0af0f435a18affa"
+            ]
+        ]
+    },
+    {
+        "id": "c0af0f435a18affa",
+        "type": "function",
+        "z": "274bce4369f07cdd",
+        "name": "Join",
+        "func": "context.data = context.data || {};\nvar iccid=global.get(\"ICCID\");\nvar version=global.get(\"VERSION\");\nvar code=global.get(\"CODE\");\ncontext.data.datelocal=global.get(\"datelocal\");\nmsg2={};\n//return msg;\nswitch (msg.topic) {\n    case \"gga\":\n        context.data.lat = msg.lat;\n        context.data.lon = msg.lon; \n        context.data.alt= msg.alt ;\n        context.data.geoid=msg.geoidalSep;\n        context.data.numSat=msg.numSat;\n        msg = null;\n        break;\n    \n    case \"rmc\":\n        context.data.date = msg.timestamp;\n        context.data.statuss=msg.statuss;\n\n        context.data.trackTrue=msg.trackTrue;\n\n        msg = null;\n        break;\n        \n    case \"vtg\":\n        context.data.speed = msg.speedGround; \n\n        msg = null;\n        break;\n    \n    default:\n        msg = null;\n    \tbreak;\n}\n\nif(code!=undefined && version!=undefined && iccid!=undefined && context.data.statuss!=undefined && context.data.statuss!=\"V\" &&context.data.trackTrue!=undefined && context.data.date!=undefined && context.data.lat!= undefined && context.data.lon!= undefined && context.data.alt!= undefined  && context.data.geoid!=undefined && context.data.speed!=undefined && context.data.numSat!=undefined)\n{\n\nmsg = {};\nif (context.data.speed === null || isNaN(context.data.speed) || context.data.speed === \"\")\n    {\n                context.data.speed = \"0\";\n    }\nif (context.data.trackTrue === null || isNaN(context.data.trackTrue) || context.data.trackTrue === \"\")\n    {\n                context.data.trackTrue = \"0\";\n    }\nif (context.data.lon === null || isNaN(context.data.lon) || context.data.lon === \"\")\n    {\n                context.data.lon = \"0\";\n    }\nif (context.data.lat=== null || isNaN(context.data.lat) || context.data.lat === \"\")\n    {\n                context.data.lat = \"0\";\n    }\nif (context.data.altitude === null || isNaN(context.data.altitude) || context.data.altitude === \"\")\n    {\n                context.data.altitude = \"0\";\n    }\nif (context.data.numSat=== null || isNaN(context.data.numSat) || context.data.numSat === \"\")\n    {\n                context.data.numSat = \"0\";\n    }\nif (context.data.date=== null || context.data.date === \"\")\n    {\n                context.data.date = \"0\";\n    }\ncontext.data.altitude=context.data.alt+context.data.geoid;\n msg.payload= \"INSERT INTO tracking (codenumber, longitude, latitude, altitude, speed, heading, gpsDatetime, satellite, datetime, simcard, version) VALUES ('\"+ code +\"','\"+ context.data.lon +\"','\"+ context.data.lat +\"','\"+ context.data.altitude +\"','\"+ context.data.speed +\"','\"+ context.data.trackTrue +\"','\"+ context.data.date +\"','\" + context.data.numSat +\"','\"+ context.data.datelocal +\"','\"+ iccid +\"','\" +version +\"')\";\n msg2.payload=context.data.speed;\n msg2.dateGPS=context.data.date;\n msg2.dateLocal=context.data.datelocal;\n msg2.lat=context.data.lat;\n msg2.lon=context.data.lon;\n msg2.codenumber = code;\n msg2.iccid=iccid;\n msg2.version=version;\n msg2.altitude = context.data.alt;\n msg2.geoid = context.data.geoid; \n msg2.numSat =  context.data.numSat;\n msg2.heading = context.data.trackTrue;\n\n\n        context.data=null;\n        return [msg,msg2];\n}\n\n",
+        "outputs": 2,
+        "noerr": 13,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 160,
+        "wires": [
+            [
+                "ef25fa675a225bab",
+                "f95bdf5fd33ce025"
+            ],
+            [
+                "a1f925dbcc2aa311"
+            ]
+        ]
+    },
+    {
+        "id": "ef25fa675a225bab",
+        "type": "function",
+        "z": "274bce4369f07cdd",
+        "name": "replaceEmptyString",
+        "func": "var x = msg.payload;\nx = x.replace(/(\\r\\n|\\n|\\r)/gm,\"\");\nmsg.payload = x;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 160,
+        "wires": [
+            [
+                "0d958c07d64926e5"
+            ]
+        ]
+    },
+    {
+        "id": "0d958c07d64926e5",
+        "type": "change",
+        "z": "274bce4369f07cdd",
+        "name": "Result Data",
+        "rules": [
+            {
+                "t": "set",
+                "p": "result",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1170,
+        "y": 160,
+        "wires": [
+            [
+                "23fdb10f46bcf19c"
+            ]
+        ]
+    },
+    {
+        "id": "fdfdb22a5a9cf8ed",
+        "type": "function",
+        "z": "274bce4369f07cdd",
+        "name": "Speed Limit",
+        "func": "var speed=parseFloat(msg.payload);\nvar dateGPS= msg.dateGPS;\nvar dateLocal=msg.dateLocal;\nvar iccid=msg.iccid;\nvar version=msg.version;\nvar code= msg.codenumber;\nvar lat = msg.lat;\nvar lon = msg.lon;\nvar alt= msg.altitude;\nvar geoid = msg.geoid;\nvar altitude = parseFloat(alt)+parseFloat(geoid);\nvar numSat = msg.numSat;\nvar heading = msg.heading;\nvar max=parseFloat(global.get(\"MAX_SPEED\"));\nvar dur=parseFloat(global.get(\"DURATION_OVERSPEED\"));\nvar mark=0;\nvar over=global.get (\"OVERSPEED\");\nlet msg2={};\nif( over === null || over === undefined)\n{\n    global.set(\"OVERSPEED\",0);\n}\n\n\nif (speed > max)\n{\n\n    if (over === dur)\n    {\n        over=over+1;\n        msg2.payload =  \"INSERT INTO mark (codenumber, longitude, latitude, altitude, speed, heading, gpsDatetime, satellite, datetime, simcard, version,status) VALUES ('\"+ code +\"','\"+ lon +\"','\"+ lat +\"','\"+ altitude +\"','\"+ speed +\"','\"+ heading +\"','\"+ dateGPS +\"','\" + numSat +\"','\"+ dateLocal +\"','\"+ iccid +\"','\" +version +\"','start')\";\n    }\n    \n    if (over < dur)\n    {\n       \n        over=over+1;\n        global.set(\"OVERSPEED\",over);\n    }\n    //check begitu duration = over insert ke dalam database\n\n    //check ketika over speed melebihi duration waktu yang ditentukan\n    // buzzer langsung bunyi\n    if  (over > dur )\n    {\n        msg.payload = 100;\n        mark=1;\n    }\n    \n}\nif (speed < max && mark===1)\n{\n\n    if (over > dur)\n    {\n        over=0\n        global.set(\"OVERSPEED\",over);\n    }\n    if (over===dur)\n    {\n       over=over+1;\n       msg2.payload =  \"INSERT INTO mark (codenumber, longitude, latitude, altitude, speed, heading, gpsDatetime, satellite, datetime, simcard, version,status) VALUES ('\"+ code +\"','\"+ lon +\"','\"+ lat +\"','\"+ altitude +\"','\"+ speed +\"','\"+ heading +\"','\"+ dateGPS +\"','\" + numSat +\"','\"+ dateLocal +\"','\"+ iccid +\"','\" +version +\"','stop')\";\n       msg.payload = 0;\n       mark=0;\n    }  \n    if (over < dur)\n    {\n        over=over+1;\n        global.set(\"OVERSPEED\",over);\n    }\n    //check begitu duration = over insert ke dalam databas\n}\nif (msg.payload<100)\n{\n    msg.payload =0;\n}\n\n  return [msg,msg2];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 260,
+        "wires": [
+            [
+                "16cdb69eb9191530"
+            ],
+            [
+                "7f05254f2b513083",
+                "08e5d2ce0d09577f"
+            ]
+        ]
+    },
+    {
+        "id": "16cdb69eb9191530",
+        "type": "rpi-gpio out",
+        "z": "274bce4369f07cdd",
+        "d": true,
+        "name": "buzzer",
+        "pin": "11",
+        "set": "",
+        "level": "0",
+        "freq": "100",
+        "out": "pwm",
+        "bcm": true,
+        "x": 1250,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f73ae5c653d3d00c",
+        "type": "debug",
+        "z": "274bce4369f07cdd",
+        "name": "debugNMEAGPS",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "f95bdf5fd33ce025",
+        "type": "debug",
+        "z": "274bce4369f07cdd",
+        "name": "DebugJoinData",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "07739c49b6841db9",
+        "type": "comment",
+        "z": "274bce4369f07cdd",
+        "name": "Read GPS Flow",
+        "info": "Get Data from USB GPS\n1. Get GGA\n2. Get RMC\n3. Get VTG\nCombine and Joined 3 of them with DateTime, Global input Code Machine, ICCD and Version",
+        "x": 140,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7f05254f2b513083",
+        "type": "change",
+        "z": "274bce4369f07cdd",
+        "name": "OverMark",
+        "rules": [
+            {
+                "t": "set",
+                "p": "overmark",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9d7164f682355cbc",
+        "type": "serial request",
+        "z": "274bce4369f07cdd",
+        "name": "",
+        "serial": "dded2f0d0a1e82bb",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "cc2152d8a151da24",
+                "3b2c87d132f223e7"
+            ]
+        ]
+    },
+    {
+        "id": "cc2152d8a151da24",
+        "type": "debug",
+        "z": "274bce4369f07cdd",
+        "name": "GPS Data",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "978cf9352be2a727",
+        "type": "debug",
+        "z": "274bce4369f07cdd",
+        "name": "gga",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "08e5d2ce0d09577f",
+        "type": "debug",
+        "z": "274bce4369f07cdd",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "102b98230700f842",
+        "type": "comment",
+        "z": "274bce4369f07cdd",
+        "name": "Perlu Revisi Speed Limit",
+        "info": "",
+        "x": 970,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a1f925dbcc2aa311",
+        "type": "debug",
+        "z": "274bce4369f07cdd",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "495b6f6135c7a6de",
+        "type": "inject",
+        "z": "ebd1271af3be5717",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "eb491bb5fb4602ce",
+                "7e784d8d21c316d3"
+            ]
+        ]
+    },
+    {
+        "id": "befa26c13445cdaa",
+        "type": "switch",
+        "z": "ebd1271af3be5717",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "$GPGGA",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "$GNGGA",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "$GPRMC",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "$GNRMC",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "$GPVTG",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "$GNVTG",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "c97abb7c64d2ca90"
+            ],
+            [
+                "c97abb7c64d2ca90"
+            ],
+            [
+                "47e9d3d59d74fdb3"
+            ],
+            [
+                "47e9d3d59d74fdb3"
+            ],
+            [
+                "d65bec82073c3c63"
+            ],
+            [
+                "d65bec82073c3c63"
+            ]
+        ]
+    },
+    {
+        "id": "afaa04dff1f5dea7",
+        "type": "debug",
+        "z": "ebd1271af3be5717",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a0626bcd851cefa1",
+        "type": "split",
+        "z": "ebd1271af3be5717",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "befa26c13445cdaa"
+            ]
+        ]
+    },
+    {
+        "id": "c97abb7c64d2ca90",
+        "type": "function",
+        "z": "ebd1271af3be5717",
+        "name": "GGA",
+        "func": "//Sample Data : $GPGGA,172814.0,3723.46587704,N,12202.26957864,W,2,6,1.2,18.893,M,-25.669,M,2.0,0031*4F\n\nvar Data = msg.payload.split(\"*\").join(\",\").split(\",\");\n\n\n//Message ID  \nmsg.payload.DataA = Data[0]; // $GPGGA\n\n//UTC of position fix \nmsg.payload.DataB = Data[1]; // 172814.0\n\n//Position\nmsg.payload.DataC = Data[2]; //Latitude : 3723.46587704\nmsg.payload.DataD = Data[3]; //Direction of latitude : N (N: North; S: South)\nmsg.payload.DataE = Data[4]; //Longitude : 12202.26957864\nmsg.payload.DataF = Data[5]; //\tDirection of longitude: W (E: East; W: West)\n\n//GPS Quality indicator (0: Fix not valid; 1: GPS fix; 2: Differential GPS fix, OmniSTAR VBS; \n//4: Real-Time Kinematic, fixed integers; \n//5: Real-Time Kinematic, float integers, OmniSTAR XP/HP or Location RTK)\nmsg.payload.DataG = Data[6]; // 2 \n\n//Number of SVs in use, range from 00 through to 24+\nmsg.payload.DataH = Data[7]; // 6\n\n//HDOP\nmsg.payload.DataI = Data[8]; // 1.2\n\n//Height\nmsg.payload.DataJ = Data[9]; // Orthometric height (MSL reference) : 18.893\nmsg.payload.DataK = Data[10]; // Unit of measure for orthometric height is meters : M\nmsg.payload.DataL = Data[11]; // Geoid separation : -25.669\nmsg.payload.DataM = Data[12]; // Geoid separation measured in meters : M\n\n//Age of differential GPS data record, Type 1 or Type 9. Null field when DGPS is not used\nmsg.payload.DataN = Data[13]; // 2.0\n\n//Reference station ID, range 0000-4095. A null field when any reference station ID is selected and no corrections are received.\n//When using OmniSTAR services, the Reference Station ID indicates the following services: VBS 100=VBS; 1000=HP; 1001 = HP/XP (Orbits) ; \n//1002 = HP/G2 (Orbits); 1008 = XP (GPS); 1012 = G2 (GPS); 1013 = G2 (GPS/GLONASS); 1014 = G2 (GLONASS); 1016 = HP/XP (GPS); \n//1020 = HP/G2 (GPS) ; 1021 = HP/G2 (GPS/GLONASS).\nmsg.payload.DataO = Data[14]; // 0031\n\n//The checksum data, always begins with *\nmsg.payload.DataP = Data[15]; //*4F\n\nvar lat = \"\" ;\nvar lon = \"\";\n\n//Parameter\tValue\tUnit\tDescription\n//Lon\t10648.26725\tdddmm.mmmm\tLongitude\n//Longitude convresion\nvar lonsplit = Data[4].split(\"\");\nvar lon1 = lonsplit[0]+lonsplit[1]+lonsplit[2];\nvar lon2 = parseFloat(lon1);\nvar lon3 = parseFloat((lonsplit[3]+lonsplit[4]+lonsplit[5]+lonsplit[6]+\n          lonsplit[7]+lonsplit[8]+lonsplit[9]+lonsplit[10]));\nvar lon4 = parseFloat(lon3/60).toFixed(4);\nvar lon5 = parseFloat(lon4);\nvar lon6 = lon2 + lon5;\n\n//Change to West\nif (Data[5] == \"W\") {\nlon = lon6*(-1);\n} else {lon = lon6}\n\n\n//Lat\t0614.43385\tddmm.mmmm\tLatitude\n//Latitude convresion\nvar latsplit = Data[2].split(\"\");\nvar lat1 = latsplit[0]+latsplit[1];\nvar lat2 = parseFloat(lat1);\nvar lat3 = parseFloat((latsplit[2]+latsplit[3]+latsplit[4]+latsplit[5]+latsplit[6]+\n          latsplit[7]+latsplit[8]+latsplit[9]));\nvar lat4 = parseFloat(lat3/60).toFixed(4);\nvar lat5 = parseFloat(lat4);\nvar lat6 = lat2 + lat5;\n\n//Lat change to S\nif (Data[3] == \"S\") {\nlat = (lat6*(-1));\n} else {lat = lat6}\n\n\n\nmsg = {};\nmsg2 = {};\nmsg.sentence = Data[0];\nmsg.lat = lat;\nmsg.lon = lon;\nmsg.GPSQuality = parseFloat(Data[6]);\nmsg.numSat = parseFloat(Data[7]);\nmsg.horDilution = Data[8];\nmsg.alt = parseFloat(Data[9]);\nmsg.geoidalSep = parseFloat(Data[11]);\nmsg.differentialAge = Data[13];\nmsg.differentialRefStn = Data[14];\n\n\nmsg.topic = \"gga\";\n\nmsg.payload = {\"sentence\":msg.sentence,\"lat\":lat,\"lon\":lon,\"GPSQuality\":msg.GPSQuality,\"numSat\":msg.numSat,\"altOrtho\":msg.alt,\"geoidalSep\":msg.geoidalSep,\"differentialAge\":msg.differentialAge,\"differentialRefStn\":msg.differentialRefStn};\n\nmsg2.payload = Data;\n\nreturn [msg,msg2];\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 140,
+        "wires": [
+            [
+                "8b37614af786e739",
+                "97230d4e0c875685"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "47e9d3d59d74fdb3",
+        "type": "function",
+        "z": "ebd1271af3be5717",
+        "name": "RMC",
+        "func": "//Sample Data : $GPRMC,123519,A,4807.038,N,01131.000,E,022.4,084.4,230394,003.1,W*6A\n\nvar Data = msg.payload.split(\"*\").join(\",\").split(\",\");\n\n\n//Message ID  \nmsg.payload.DataA = Data[0]; // $GPRMC\n\n//UTC of position fix \nmsg.payload.DataB = Data[1]; // 123519\n\n//Status A=active or V=void\nmsg.payload.DataC = Data[2]; // A\n\n//Position\nmsg.payload.DataD = Data[3]; //Latitude : 4807.038\nmsg.payload.DataE = Data[4]; //Direction of latitude : N (N: North; S: South)\nmsg.payload.DataF = Data[5]; //Longitude : 01131.000\nmsg.payload.DataG = Data[6]; //\tDirection of longitude: E (E: East; W: West)\n\n//Speed over the ground in knots\nmsg.payload.DataH = Data[7]; // 022.4 \n\n//Track angle in degrees (True)\nmsg.payload.DataI = Data[8]; // 084.4\n\n//Date\nmsg.payload.DataJ = Data[9]; // 230394\n\n//Magnetic variation in degrees\nmsg.payload.DataK = Data[10]; // 003.1\n\nmsg.payload.DataL = Data[11]; // W\n\n//The checksum data, always begins with *\nmsg.payload.DataM = Data[12]; // *6A\n\nvar lat = \"\" ;\nvar lon = \"\";\n\n//Parameter\tValue\tUnit\tDescription\n//Lon\t10648.26725\tdddmm.mmmm\tLongitude\n//Longitude convresion\nvar lonsplit = Data[5].split(\"\");\nvar lon1 = lonsplit[0]+lonsplit[1]+lonsplit[2];\nvar lon2 = parseFloat(lon1);\nvar lon3 = parseFloat((lonsplit[3]+lonsplit[4]+lonsplit[5]+lonsplit[6]+\n          lonsplit[7]+lonsplit[8]+lonsplit[9]+lonsplit[10]));\nvar lon4 = parseFloat(lon3/60).toFixed(4);\nvar lon5 = parseFloat(lon4);\nvar lon6 = lon2 + lon5;\n\n//Change to West\nif (Data[6] == \"W\") {\nlon = lon6*(-1);\n} else {lon = lon6}\n\n\n//Lat\t0614.43385\tddmm.mmmm\tLatitude\n//Latitude convresion\nvar latsplit = Data[3].split(\"\");\nvar lat1 = latsplit[0]+latsplit[1];\nvar lat2 = parseFloat(lat1);\nvar lat3 = parseFloat((latsplit[2]+latsplit[3]+latsplit[4]+latsplit[5]+latsplit[6]+\n          latsplit[7]+latsplit[8]+latsplit[9]));\nvar lat4 = parseFloat(lat3/60).toFixed(4);\nvar lat5 = parseFloat(lat4);\nvar lat6 = lat2 + lat5;\n\n//Lat change to S\nif (Data[4] == \"S\") {\nlat = (lat6*(-1));\n} else {lat = lat6}\n\n//DateTime\nvar utc = Data[1].split(\"\");\nvar time = utc[0]+utc[1]+\":\"+utc[2]+utc[3]+\":\"+utc[4]+utc[5];\nvar date = Data[9].split(\"\");\nvar DD = date[0]+date[1];\nvar MM = date[2]+date[3];\nvar YY = date[4]+date[5];\nvar Datetimestamp = 20 + YY +\"-\"+ MM +\"-\"+ DD +\" \"+ time;\n\n\nmsg = {};\nmsg2 = {};\nmsg.sentence = Data[0];\nmsg.statuss = Data[2];\nmsg.lat = lat;\nmsg.lon = lon;\nmsg.speedKnots = parseFloat(Data[7]);\nmsg.trackTrue = Data[8]\nmsg.date = Data[9];\nmsg.variation = Data[10];\nmsg.timestamp = Datetimestamp;\n\nmsg.topic = \"rmc\";\n\nmsg.payload = {\"sentence\":msg.sentence,\"status\":msg.statuss,\"lat\":lat,\"lon\":lon,\"speedKnots\":msg.speedKnots,\"trackTrue\":msg.trackTrue,\"date\":msg.date,\"variation\":msg.variation,\"timestamp\":msg.timestamp};\n\nmsg2.payload = Data;\n\nreturn [msg,msg2];\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 180,
+        "wires": [
+            [
+                "8b37614af786e739",
+                "97230d4e0c875685"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d65bec82073c3c63",
+        "type": "function",
+        "z": "ebd1271af3be5717",
+        "name": "VTG",
+        "func": "//Sample Data : $GPVTG,140.88,T,,M,8.04,N,14.89,K,D*05\n\nvar Data = msg.payload.split(\"*\").join(\",\").split(\",\");\n\n\n//Message ID  \nmsg.payload.DataA = Data[0]; //$GPVTG\n\n//Track made good (degrees true)\nmsg.payload.DataB = Data[1]; //140.88\n\n//T: track made good is relative to true north\nmsg.payload.DataC = Data[2]; //T\n\n//Track made good (degrees magnetic)\nmsg.payload.DataD = Data[3];\n\n//M: track made good is relative to magnetic north\nmsg.payload.DataE = Data[4]; //M\n\n//Speed, in knots\nmsg.payload.DataF = Data[5]; //8.04\n\n//N: speed is measured in knots\nmsg.payload.DataG = Data[6]; // N\n\n//Speed over ground in kilometers/hour (kph)\nmsg.payload.DataH = Data[7]; //18.49\n\n//K: speed over ground is measured in kph\nmsg.payload.DataI = Data[8]; // K\n\n//Mode indicator A: Autonomous mode D: Differential mode E: Estimated (dead reckoning) mode M: Manual Input mode S: Simulator mode N: Data not valid\nmsg.payload.DataJ = Data[9]; // D\n\n//The checksum data, always begins with *\nmsg.payload.DataK = Data[10]; // *05\n\nmsg = {};\nmsg2 = {};\nmsg.sentence = Data[0];\nmsg.trackTrue = Data[1];\nmsg.trackMagnetic = Data[3];\nmsg.speedKnots = parseFloat(Data[5]);\nmsg.speedGround = parseFloat(Data[7]);\nmsg.modeindicator = Data[9];\n\nmsg.topic = \"vtg\";\n\nmsg.payload = {\"sentence\":msg.sentence,\"trackTrue\":msg.trackTrue,\"trackMagnetic\":msg.trackMagnetic,\"speedKnots\":msg.speedKnots,\"speedGround\":msg.speedGround,\"modeindicator\":msg.modeindicator};\n\nmsg2.payload = Data;\n\nreturn [msg,msg2];\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 240,
+        "wires": [
+            [
+                "8b37614af786e739",
+                "97230d4e0c875685",
+                "73ef8454b1998942"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "eb491bb5fb4602ce",
+        "type": "moment",
+        "z": "ebd1271af3be5717",
+        "name": "",
+        "topic": "datelocal",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Jakarta",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "YYYY-MM-DD HH:mm:ss",
+        "locale": "en-US",
+        "output": "datelocal",
+        "outputType": "global",
+        "outTz": "Asia/Singapore",
+        "x": 520,
+        "y": 40,
+        "wires": [
+            [
+                "8b37614af786e739"
+            ]
+        ]
+    },
+    {
+        "id": "8b37614af786e739",
+        "type": "function",
+        "z": "ebd1271af3be5717",
+        "name": "Join",
+        "func": "context.data = context.data || {};\nvar iccid=global.get(\"ICCID\");\nvar version=global.get(\"VERSION\");\nvar code=global.get(\"CODE\");\ncontext.data.datelocal=global.get(\"datelocal\");\nmsg2={};\n//return msg;\nswitch (msg.topic) {\n    case \"gga\":\n        context.data.lat = msg.lat;\n        context.data.lon = msg.lon; \n        context.data.alt= msg.alt ;\n        context.data.geoid=msg.geoidalSep;\n        context.data.numSat=msg.numSat;\n        msg = null;\n        break;\n    \n    case \"rmc\":\n        context.data.date = msg.timestamp;\n        context.data.statuss=msg.statuss;\n\n        context.data.trackTrue=msg.trackTrue;\n\n        msg = null;\n        break;\n        \n    case \"vtg\":\n        context.data.speed = msg.speedGround; \n\n        msg = null;\n        break;\n    \n    default:\n        msg = null;\n    \tbreak;\n}\n\nif(code!=undefined && version!=undefined && iccid!=undefined && context.data.statuss!=undefined && context.data.statuss!=\"V\" &&context.data.trackTrue!=undefined && context.data.date!=undefined && context.data.lat!= undefined && context.data.lon!= undefined && context.data.alt!= undefined  && context.data.geoid!=undefined && context.data.speed!=undefined && context.data.numSat!=undefined)\n{\n\nmsg = {};\nif (context.data.speed === null || isNaN(context.data.speed) || context.data.speed === \"\")\n    {\n                context.data.speed = \"0\";\n    }\nif (context.data.trackTrue === null || isNaN(context.data.trackTrue) || context.data.trackTrue === \"\")\n    {\n                context.data.trackTrue = \"0\";\n    }\nif (context.data.lon === null || isNaN(context.data.lon) || context.data.lon === \"\")\n    {\n                context.data.lon = \"0\";\n    }\nif (context.data.lat=== null || isNaN(context.data.lat) || context.data.lat === \"\")\n    {\n                context.data.lat = \"0\";\n    }\nif (context.data.altitude === null || isNaN(context.data.altitude) || context.data.altitude === \"\")\n    {\n                context.data.altitude = \"0\";\n    }\nif (context.data.numSat=== null || isNaN(context.data.numSat) || context.data.numSat === \"\")\n    {\n                context.data.numSat = \"0\";\n    }\nif (context.data.date=== null || context.data.date === \"\")\n    {\n                context.data.date = \"0\";\n    }\ncontext.data.altitude=context.data.alt+context.data.geoid;\n msg.payload= \"INSERT INTO tracking (codenumber, longitude, latitude, altitude, speed, heading, gpsDatetime, satellite, datetime, simcard, version) VALUES ('\"+ code +\"','\"+ context.data.lon +\"','\"+ context.data.lat +\"','\"+ context.data.altitude +\"','\"+ context.data.speed +\"','\"+ context.data.trackTrue +\"','\"+ context.data.date +\"','\" + context.data.numSat +\"','\"+ context.data.datelocal +\"','\"+ iccid +\"','\" +version +\"')\";\n msg2.payload=context.data.speed;\n msg2.dateGPS=context.data.date;\n msg2.dateLocal=context.data.datelocal;\n msg2.lat=context.data.lat;\n msg2.lon=context.data.lon;\n msg2.codenumber = code;\n msg2.iccid=iccid;\n msg2.version=version;\n msg2.altitude = context.data.alt;\n msg2.geoid = context.data.geoid; \n msg2.numSat =  context.data.numSat;\n msg2.heading = context.data.trackTrue;\n\n\n        context.data=null;\n        return [msg,msg2];\n}\n\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 160,
+        "wires": [
+            [
+                "50461f3d23715b15",
+                "17b48d06aeded8a7"
+            ],
+            [
+                "e683109585d6a7f6"
+            ]
+        ]
+    },
+    {
+        "id": "50461f3d23715b15",
+        "type": "function",
+        "z": "ebd1271af3be5717",
+        "name": "replaceEmptyString",
+        "func": "var x = msg.payload;\nx = x.replace(/(\\r\\n|\\n|\\r)/gm,\"\");\nmsg.payload = x;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 160,
+        "wires": [
+            [
+                "10122f148d11f80e"
+            ]
+        ]
+    },
+    {
+        "id": "10122f148d11f80e",
+        "type": "change",
+        "z": "ebd1271af3be5717",
+        "name": "Result Data",
+        "rules": [
+            {
+                "t": "set",
+                "p": "result",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1170,
+        "y": 160,
+        "wires": [
+            [
+                "afaa04dff1f5dea7"
+            ]
+        ]
+    },
+    {
+        "id": "e683109585d6a7f6",
+        "type": "function",
+        "z": "ebd1271af3be5717",
+        "name": "Speed Limit",
+        "func": "var speed=parseFloat(msg.payload);\nvar dateGPS= msg.dateGPS;\nvar dateLocal=msg.dateLocal;\nvar iccid=msg.iccid;\nvar version=msg.version;\nvar code= msg.codenumber;\nvar lat = msg.lat;\nvar lon = msg.lon;\nvar alt= msg.altitude;\nvar geoid = msg.geoid;\nvar altitude = parseFloat(alt)+parseFloat(geoid);\nvar numSat = msg.numSat;\nvar heading = msg.heading;\nvar max=parseFloat(global.get(\"MAX_SPEED\"));\nvar dur=parseFloat(global.get(\"DURATION_OVERSPEED\"));\nvar mark=0;\n var over=global.get (\"OVERSPEED\");\n msg2={};\nif( over === null || over === undefined)\n{\n    global.set(\"OVERSPEED\",0);\n}\n\n\nif (speed > max)\n{\n\n    if (over === dur)\n    {\n        over=over+1;\n        msg2.payload =  \"INSERT INTO mark (codenumber, longitude, latitude, altitude, speed, heading, gpsDatetime, satellite, datetime, simcard, version,status) VALUES ('\"+ code +\"','\"+ lon +\"','\"+ lat +\"','\"+ altitude +\"','\"+ speed +\"','\"+ heading +\"','\"+ dateGPS +\"','\" + numSat +\"','\"+ dateLocal +\"','\"+ iccid +\"','\" +version +\"','start')\";\n    }\n    \n    if (over < dur)\n    {\n       \n        over=over+1;\n        global.set(\"OVERSPEED\",over);\n    }\n    //check begitu duration = over insert ke dalam database\n\n    //check ketika over speed melebihi duration waktu yang ditentukan\n    // buzzer langsung bunyi\n    if  (over > dur )\n    {\n        msg.payload = 100;\n        mark=1;\n    }\n    \n}\nif (speed < max && mark===1)\n{\n\n    if (over > dur)\n    {\n        over=0\n        global.set(\"OVERSPEED\",over);\n    }\n    if (over===dur)\n    {\n       over=over+1;\n       msg2.payload =  \"INSERT INTO mark (codenumber, longitude, latitude, altitude, speed, heading, gpsDatetime, satellite, datetime, simcard, version,status) VALUES ('\"+ code +\"','\"+ lon +\"','\"+ lat +\"','\"+ altitude +\"','\"+ speed +\"','\"+ heading +\"','\"+ dateGPS +\"','\" + numSat +\"','\"+ dateLocal +\"','\"+ iccid +\"','\" +version +\"','start')\";\n       msg.payload = 0;\n       mark=0;\n    }  \n    if (over < dur)\n    {\n        over=over+1;\n        global.set(\"OVERSPEED\",over);\n    }\n    //check begitu duration = over insert ke dalam database\n\n\n \n}\n  return [msg,msg2];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 260,
+        "wires": [
+            [
+                "b6fc50720fd1a5fe"
+            ],
+            [
+                "8dd7e06f22ab2c52"
+            ]
+        ]
+    },
+    {
+        "id": "b6fc50720fd1a5fe",
+        "type": "rpi-gpio out",
+        "z": "ebd1271af3be5717",
+        "d": true,
+        "name": "buzzer",
+        "pin": "11",
+        "set": "",
+        "level": "0",
+        "freq": "100",
+        "out": "pwm",
+        "bcm": true,
+        "x": 1110,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "97230d4e0c875685",
+        "type": "debug",
+        "z": "ebd1271af3be5717",
+        "name": "debugNMEAGPS",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "17b48d06aeded8a7",
+        "type": "debug",
+        "z": "ebd1271af3be5717",
+        "name": "DebugJoinData",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ac4498561271f390",
+        "type": "comment",
+        "z": "ebd1271af3be5717",
+        "name": "Read GPS Flow",
+        "info": "Get Data from USB GPS\n1. Get GGA\n2. Get RMC\n3. Get VTG\nCombine and Joined 3 of them with DateTime, Global input Code Machine, ICCD and Version",
+        "x": 140,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8dd7e06f22ab2c52",
+        "type": "change",
+        "z": "ebd1271af3be5717",
+        "name": "OverMark",
+        "rules": [
+            {
+                "t": "set",
+                "p": "overmark",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1120,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e784d8d21c316d3",
+        "type": "serial request",
+        "z": "ebd1271af3be5717",
+        "name": "",
+        "serial": "dded2f0d0a1e82bb",
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "b17d693e9b2e37d5",
+                "a0626bcd851cefa1"
+            ]
+        ]
+    },
+    {
+        "id": "b17d693e9b2e37d5",
+        "type": "debug",
+        "z": "ebd1271af3be5717",
+        "name": "GPS Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "73ef8454b1998942",
+        "type": "debug",
+        "z": "ebd1271af3be5717",
+        "name": "gga",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ea9073bcab52aa64",
+        "type": "inject",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "statusNet",
+        "payloadType": "flow",
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "7303bd81a3f954c5"
+            ]
+        ]
+    },
+    {
+        "id": "8d759d00a62843bd",
+        "type": "serial in",
+        "z": "ba1572da8a4b1f0f",
+        "name": "GPS Serial Raw",
+        "serial": "baaf8922e2d7c647",
+        "x": 280,
+        "y": 980,
+        "wires": [
+            [
+                "3465976f5f028a20"
+            ]
+        ]
+    },
+    {
+        "id": "3465976f5f028a20",
+        "type": "nmea",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "property": "payload",
+        "outputProperty": "payload",
+        "x": 430,
+        "y": 980,
+        "wires": [
+            [
+                "c79389feb7939c93"
+            ]
+        ]
+    },
+    {
+        "id": "3fb26b34a7fb1952",
+        "type": "debug",
+        "z": "ba1572da8a4b1f0f",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "c79389feb7939c93",
+        "type": "switch",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Parsing RMC GGA VTG",
+        "property": "payload.sentence",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "RMC",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "GGA",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "VTG",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 610,
+        "y": 980,
+        "wires": [
+            [
+                "ee0429bbaee9af29"
+            ],
+            [
+                "70db725463521d41"
+            ],
+            [
+                "38a5c85b7625d4e3"
+            ]
+        ]
+    },
+    {
+        "id": "ee0429bbaee9af29",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "RMC",
+        "func": "let rmc = {};\nconst date = new Date(msg.payload.dateTime);\nrmc.gps_time = date.toLocaleString('sv-SE') + \".\" + date.getMilliseconds();\nmsg.payload = rmc;\ndelete msg.port;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 940,
+        "wires": [
+            [
+                "f47d861c83ca0b7f"
+            ]
+        ]
+    },
+    {
+        "id": "f47d861c83ca0b7f",
+        "type": "join",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Store Data",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "11",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1010,
+        "y": 980,
+        "wires": [
+            [
+                "f21eb799064533c8"
+            ]
+        ]
+    },
+    {
+        "id": "3820307ff0a34f9c",
+        "type": "inject",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Hardcode",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"no_unit\":\"\",\"direction\":0,\"status_unit\":1,\"geofence_id\":null,\"geofence_name\":\"\"}",
+        "payloadType": "json",
+        "x": 830,
+        "y": 860,
+        "wires": [
+            [
+                "f47d861c83ca0b7f"
+            ]
+        ]
+    },
+    {
+        "id": "c0dab0fa41d97b92",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "PUSH LIVE",
+        "func": "const str = JSON.stringify(msg.payload);\nmsg.payload = str;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1970,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f21eb799064533c8",
+        "type": "delay",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 980,
+        "wires": [
+            [
+                "c0dab0fa41d97b92",
+                "93945c2da463fd27",
+                "d429b9117a27b203"
+            ]
+        ]
+    },
+    {
+        "id": "90f8c3a648fcc5b9",
+        "type": "Kafka Producer",
+        "z": "ba1572da8a4b1f0f",
+        "name": "LIVE",
+        "broker": "b9cd7152df9839f4",
+        "topic": "tpc-dtrack-tracking-live",
+        "topicSlash2dot": false,
+        "requireAcks": 1,
+        "ackTimeoutMs": 100,
+        "partitionerType": 0,
+        "key": "",
+        "partition": "1",
+        "attributes": 0,
+        "connectionType": "Producer",
+        "convertFromJson": false,
+        "x": 2170,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "93945c2da463fd27",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "INSERT DATA",
+        "func": "const firstCmd = \"INSERT INTO HISTORY(no_unit, longitude, latitude, altitude, direction, speed, status_unit, geofence_id, geofence_name, gps_time, satellite, insertdate) values (\";\nconst valueCmd = `\"${msg.payload.no_unit}\",${msg.payload.lon},${msg.payload.lat},${msg.payload.alt},${msg.payload.direction},${msg.payload.speed},${msg.payload.status_unit},${msg.payload.geofence_id},\"${msg.payload.geofence_name}\",\"${msg.payload.gps_time}\",${msg.payload.numsat},strftime('%Y-%m-%d %H:%M:%f','now','localtime'))`;\nconst insert = firstCmd + valueCmd;\nmsg.topic = insert;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1980,
+        "y": 600,
+        "wires": [
+            [
+                "80787fe0c18ad96b",
+                "fcbea65648773b2b"
+            ]
+        ]
+    },
+    {
+        "id": "80787fe0c18ad96b",
+        "type": "sqlite",
+        "z": "ba1572da8a4b1f0f",
+        "mydb": "717c59f6f2d02fd2",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "dataLocal",
+        "x": 2180,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f46c415069bdc153",
+        "type": "status",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "scope": [
+            "668211ae85991c7d"
+        ],
+        "x": 280,
+        "y": 1560,
+        "wires": [
+            [
+                "f57705061b6adb5b"
+            ]
+        ]
+    },
+    {
+        "id": "f57705061b6adb5b",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "function 1",
+        "func": "if (msg.status.text.includes('Connected to')) {\n    msg.statusNet = 0;\n} else {\n    msg.statusNet = 1;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 1560,
+        "wires": [
+            [
+                "7676e4bb7aca7092",
+                "3fb26b34a7fb1952"
+            ]
+        ]
+    },
+    {
+        "id": "7676e4bb7aca7092",
+        "type": "change",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "statusNet",
+                "pt": "flow",
+                "to": "statusNet",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7303bd81a3f954c5",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "CEK ROW",
+        "func": "if(msg.payload === 0){\n    msg.topic = \"select count(*) from history\"\n} else {\n    msg.topic = \"\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "83f893fc0f8402cc"
+            ]
+        ]
+    },
+    {
+        "id": "fb9cfedfcc344fd0",
+        "type": "inject",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Ga Konek",
+        "props": [
+            {
+                "p": "statusNet",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 520,
+        "y": 1460,
+        "wires": [
+            [
+                "7676e4bb7aca7092"
+            ]
+        ]
+    },
+    {
+        "id": "fcbea65648773b2b",
+        "type": "debug",
+        "z": "ba1572da8a4b1f0f",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2200,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "83f893fc0f8402cc",
+        "type": "sqlite",
+        "z": "ba1572da8a4b1f0f",
+        "mydb": "717c59f6f2d02fd2",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "dataLocal",
+        "x": 740,
+        "y": 320,
+        "wires": [
+            [
+                "2ef68d1aefb0a77d"
+            ]
+        ]
+    },
+    {
+        "id": "010f57bcff30e004",
+        "type": "debug",
+        "z": "ba1572da8a4b1f0f",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1580,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "2ef68d1aefb0a77d",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "QUERY-DELETE-ROW",
+        "func": "if(msg.payload[0]['count(*)'] !== 0){\n    if (msg.payload[0]['count(*)'] >= 1) {\n        if (msg.payload[0]['count(*)'] < 3000) {\n            msg.topic = \"SELECT * FROM HISTORY ORDER BY ROWID LIMIT \" + msg.payload[0]['count(*)'].toString();\n            msg.del = \"DELETE FROM history WHERE rowid in (SELECT rowid FROM history LIMIT \" + msg.payload[0]['count(*)'].toString() + \" )\";\n        } else {\n            msg.topic = \"SELECT * FROM HISTORY ORDER BY ROWID LIMIT 3000\"\n            msg.del = \"DELETE FROM history WHERE rowid in (SELECT rowid FROM history LIMIT 3000 )\";\n        }\n    }\n    else {\n        msg.topic = \"SELECT * FROM HISTORY ORDER BY ROWID LIMIT 1\"\n        msg.del = \"DELETE FROM history WHERE rowid in (SELECT rowid FROM history LIMIT 1 )\";\n    }\n}\nelse{\n    msg.payload = \"\";\n    msg.topic = \"\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 320,
+        "wires": [
+            [
+                "36d4131d1f641df5",
+                "4c949b0d8c04d626"
+            ]
+        ]
+    },
+    {
+        "id": "36d4131d1f641df5",
+        "type": "sqlite",
+        "z": "ba1572da8a4b1f0f",
+        "mydb": "717c59f6f2d02fd2",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "dataLocal",
+        "x": 1220,
+        "y": 240,
+        "wires": [
+            [
+                "b0d2fb472dfcb612"
+            ]
+        ]
+    },
+    {
+        "id": "4c949b0d8c04d626",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "DELETE ROW",
+        "func": "if (typeof (msg.del) != \"undefined\"){\n    msg.topic = msg.del;\n}\ndelete msg.del;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 400,
+        "wires": [
+            [
+                "28466ee72646c2a6"
+            ]
+        ]
+    },
+    {
+        "id": "b0d2fb472dfcb612",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "QUERY",
+        "func": "const str = JSON.stringify(msg.payload);\nmsg.payload = str.replace('[', '').replace(']', '').split('},').join('}\\n');\ndelete msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 240,
+        "wires": [
+            [
+                "9607d381fbd05fe4"
+            ]
+        ]
+    },
+    {
+        "id": "9607d381fbd05fe4",
+        "type": "Kafka Producer",
+        "z": "ba1572da8a4b1f0f",
+        "name": "HISTORY",
+        "broker": "b9cd7152df9839f4",
+        "topic": "tpc-dtrack-tracking-history",
+        "topicSlash2dot": false,
+        "requireAcks": 1,
+        "ackTimeoutMs": 100,
+        "partitionerType": 0,
+        "key": "",
+        "partition": "1",
+        "attributes": 0,
+        "connectionType": "Producer",
+        "convertFromJson": false,
+        "x": 1560,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "28466ee72646c2a6",
+        "type": "sqlite",
+        "z": "ba1572da8a4b1f0f",
+        "mydb": "717c59f6f2d02fd2",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "dataLocal",
+        "x": 1420,
+        "y": 400,
+        "wires": [
+            [
+                "010f57bcff30e004"
+            ]
+        ]
+    },
+    {
+        "id": "9317235ea80b8d06",
+        "type": "inject",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Konek",
+        "props": [
+            {
+                "p": "statusNet",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 510,
+        "y": 1400,
+        "wires": [
+            [
+                "7676e4bb7aca7092"
+            ]
+        ]
+    },
+    {
+        "id": "38a5c85b7625d4e3",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "VTG",
+        "func": "let vtg = {};\nvtg.speed = msg.payload.speedKmph;\nmsg.payload = vtg;\ndelete msg.port;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1020,
+        "wires": [
+            [
+                "f47d861c83ca0b7f"
+            ]
+        ]
+    },
+    {
+        "id": "9c395ee7230cd5e6",
+        "type": "file in",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "filename": "/home/pi/settingTes.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 510,
+        "y": 1900,
+        "wires": [
+            [
+                "3922935bca9a0169"
+            ]
+        ]
+    },
+    {
+        "id": "bffc6e18256e9228",
+        "type": "debug",
+        "z": "ba1572da8a4b1f0f",
+        "name": "debug 7",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "eb11a3abe666c72c",
+        "type": "inject",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 1900,
+        "wires": [
+            [
+                "9c395ee7230cd5e6"
+            ]
+        ]
+    },
+    {
+        "id": "3922935bca9a0169",
+        "type": "json",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 710,
+        "y": 1900,
+        "wires": [
+            [
+                "ab16ccb78b4228a6"
+            ]
+        ]
+    },
+    {
+        "id": "9b358b87f3584483",
+        "type": "rpi-gpio out",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Trigger Speaker",
+        "pin": "11",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 2460,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "70db725463521d41",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "GGA",
+        "func": "let gga = {};\nif (typeof msg.payload.lon === 'string' && typeof msg.payload.lat === 'string'){\n    msg.payload.lon = 0;\n    msg.payload.lat = 0;\n}\ngga.lon = msg.payload.lon;\ngga.lat = msg.payload.lat;\ngga.alt = msg.payload.alt;\ngga.numsat = msg.payload.numSat;\nmsg.payload = gga;\ndelete msg.port;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 980,
+        "wires": [
+            [
+                "f47d861c83ca0b7f"
+            ]
+        ]
+    },
+    {
+        "id": "ab16ccb78b4228a6",
+        "type": "change",
+        "z": "ba1572da8a4b1f0f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "maxspeed",
+                "pt": "global",
+                "to": "payload.max_speed",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "dur_overspeed",
+                "pt": "global",
+                "to": "payload.duration_overspeed",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "host_server",
+                "pt": "global",
+                "to": "payload.host",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "port_server",
+                "pt": "global",
+                "to": "payload.port",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "version",
+                "pt": "global",
+                "to": "payload.version",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "overspeed",
+                "pt": "global",
+                "to": "payload.overspeed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 1900,
+        "wires": [
+            [
+                "bffc6e18256e9228"
+            ]
+        ]
+    },
+    {
+        "id": "d429b9117a27b203",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Speed Limit",
+        "func": "let msg2 = {};\nif (global.get('stateBuzzer') === undefined) {\n    global.set('stateBuzzer', 0);\n}\nlet stateBuzzer = global.get('stateBuzzer');\n\n// Cek variabel global \"overspeed\" ada ngga\nif (global.get('overspeed') === undefined) {\n    global.set('overspeed', 0);\n}\nlet overspeed = global.get('overspeed');\n\n// Deklarasi variabel acuan\nlet maxspeed = parseFloat(global.get('maxspeed'));\nlet duration = parseFloat(global.get('dur_overspeed'));\n\n\nif (msg.payload.speed > maxspeed) {\n\n    // Nambah batasan nyawa untuk overspeed\n    if (overspeed < duration) {\n        overspeed += 1;\n        global.set('overspeed', overspeed);\n    }\n\n    // Overspeed = duration | insert ke db\n    if (overspeed === duration) {\n        overspeed += 1;\n        global.set('overspeed', overspeed);\n        msg2.topic = \"INSERT\";\n    }\n\n    // Buzzer nyala jika overspeed > duration\n    if (overspeed > duration) {\n        node.warn(\"buzzer nyala\")\n        msg.payload = 1;\n        stateBuzzer = 1;\n        global.set('stateBuzzer', stateBuzzer);\n    }\n}\n\n// node.warn(stateBuzzer);\n\n// Cek kondisi stateBuzzer\nif (msg.payload.speed < maxspeed && stateBuzzer === 1) {\n\n    node.warn(stateBuzzer);\n    // Reset overspeed\n    if (overspeed > duration) {\n        node.warn(overspeed);\n        overspeed = 0;\n        global.set('overspeed', overspeed);\n    }\n\n    if (overspeed === duration) {\n        overspeed += 1;\n        global.set('overspeed', overspeed);\n        msg2.topic = \"INSERT\";\n        node.warn(\"Mati buzzer\")\n        msg.payload = 0;\n        stateBuzzer = 0;\n        global.set('stateBuzzer', stateBuzzer);\n    }\n\n    if (overspeed < duration) {\n        overspeed += 1;\n        global.set('overspeed', overspeed);\n    }\n}\n\nreturn [msg, msg2];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1950,
+        "y": 1380,
+        "wires": [
+            [
+                "4f48a54ab41521fd",
+                "7f74f4d63c395cd5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d1210a8f12209e11",
+        "type": "inject",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Simulasi speed > maxspeed",
+        "props": [
+            {
+                "p": "payload.speed",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1660,
+        "y": 1380,
+        "wires": [
+            [
+                "d429b9117a27b203"
+            ]
+        ]
+    },
+    {
+        "id": "60842bf644024847",
+        "type": "inject",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Simulasi speed < maxspeed",
+        "props": [
+            {
+                "p": "payload.speed",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1660,
+        "y": 1440,
+        "wires": [
+            [
+                "d429b9117a27b203"
+            ]
+        ]
+    },
+    {
+        "id": "7f74f4d63c395cd5",
+        "type": "debug",
+        "z": "ba1572da8a4b1f0f",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2200,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "4f48a54ab41521fd",
+        "type": "function",
+        "z": "ba1572da8a4b1f0f",
+        "name": "Passing stateBuzzer",
+        "func": "if (typeof (msg.payload) === 'number'){\n    node.warn(\"oke\");\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2240,
+        "y": 1300,
+        "wires": [
+            [
+                "9b358b87f3584483"
+            ]
+        ]
+    }
+]
