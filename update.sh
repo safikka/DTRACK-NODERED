@@ -15,11 +15,13 @@ then
     then
         mv /home/pi/.node-red /home/pi/.node-red-backup-$now
         echo "Backup flow lama: OK!"
-        unzip -d /home/pi/.node-red node-red-dtrack.zip
+        unzip -d /home/pi/dtrack node-red-dtrack.zip
+        mv /home/pi/dtrack /home/pi/.node-red
         echo "Update flow baru: OK!"
     else
         echo "Tidak ada file Flow lama"
-        unzip -d /home/pi/.node-red node-red-dtrack.zip
+        unzip -d /home/pi/dtrack node-red-dtrack.zip
+        mv /home/pi/dtrack /home/pi/.node-red
         echo "Update flow baru: OK!"
     fi
     echo "Sukses salin file Update!"
