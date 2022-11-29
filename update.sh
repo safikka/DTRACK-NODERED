@@ -11,7 +11,7 @@ fi
 
 if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/ && cp settingGPS.json /home/pi/
 then
-    if test -f "/home/pi/.node-red"
+    if test -a "/home/pi/.node-red"
     then
         mv /home/pi/.node-red /home/pi/.node-red-backup-$now
         echo "Backup flow lama: OK!"
@@ -19,7 +19,7 @@ then
         echo "Update flow baru: OK!"
     else
         echo "Tidak ada file Flow lama"
-        unzip /home/pi/.tes-nodered node-red-dtrack.zip
+        unzip node-red-dtrack.zip /home/pi/.tes-nodered
         echo "Update flow baru: OK!"
     fi
     echo "Sukses salin file Update!"
