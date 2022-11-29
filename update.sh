@@ -8,7 +8,7 @@ then
     echo "Hapus flow lama: OK!"
 fi
 
-if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/ && cp settingGPS.json /home/pi/ && cp -R node-red-contrib-kafka-manager /home/pi/.node-red/node_modules/ && cp -R node-red-contrib-nmea /home/pi/.node-red/node_modules/ && cp -R node-red-contrib-kafkajs /home/pi/.node-red/node_modules/ && cp flows.json /home/pi/.node-red/
+if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/ && cp settingGPS.json /home/pi/ && cp -R node-red-contrib-kafka-manager /home/pi/.node-red/node_modules/ && cp -R node-red-contrib-nmea /home/pi/.node-red/node_modules/ && cp -R node-red-contrib-kafkajs /home/pi/.node-red/node_modules/ && cp flows.json /home/pi/.node-red/ && cp package.json /home/pi/.node-red/
 then
     echo "Sukses salin file Update!"
 else
