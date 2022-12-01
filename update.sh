@@ -9,8 +9,19 @@ then
     echo "Hapus flow lama: OK!"
 fi
 
-if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/ && cp settingGPS.json /home/pi/
+if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/
 then
+    if test -f "/home/pi/settingGPS.json"
+    then
+        mv /home/pi/settingGPS.json /home/pi/settingGPS-backup.json
+        cp settingGPS.json /home/pi/
+        echo "Update settingGPS: OK!"
+    else
+        echo "File settingGPS tidak ada"
+        cp settingGPS.json /home/pi/
+        echo "Penambahan settingGPS.json: OK!"
+    fi
+
     if test -a "/home/pi/.node-red"
     then
         mv /home/pi/.node-red /home/pi/.node-red-backup-last
