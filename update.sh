@@ -26,6 +26,7 @@ then
     then
         mv /home/pi/.node-red /home/pi/.node-red-backup-last
         echo "Backup flow lama: OK!"
+        sudo rm -r /home/pi/.node-red
         unzip -d /home/pi/ node-red-dtrack.zip
         mv /home/pi/node-red-dtrack /home/pi/.node-red
         echo "Update flow baru: OK!"
