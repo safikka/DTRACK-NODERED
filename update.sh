@@ -24,7 +24,7 @@ then
 
     if test -a "/home/pi/.node-red"
     then
-        mv /home/pi/.node-red /home/pi/.node-red-backup-last
+        scp -r /home/pi/.node-red /home/pi/.node-red-backup-last
         echo "Backup flow lama: OK!"
         sudo rm -r /home/pi/.node-red
         unzip -d /home/pi/ node-red-dtrack.zip
