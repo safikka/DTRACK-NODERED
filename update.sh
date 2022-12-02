@@ -47,4 +47,3 @@ then
 else
     echo "Gagal $?"
 fi
-:set ff=unix
