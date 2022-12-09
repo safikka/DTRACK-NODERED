@@ -9,7 +9,7 @@ then
     echo "Hapus flow lama: OK!"
 fi
 
-if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/
+if cp DTRACK-GPS.db /home/pi/ && cp DTRACK-SPEED.db /home/pi/ && cp DTRACK-GEOFENCE.db /home/pi/ 
 then
     if test -f "/home/pi/settingGPS.json"
     then

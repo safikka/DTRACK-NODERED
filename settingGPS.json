@@ -3,5 +3,6 @@
 "code":"KPHO02",
 "max_speed":9,
 "duration_overspeed":3,
+"sendtime":5,
 "host":"g-02-0001.kppmining.com",
 "port":9092}
