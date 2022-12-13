@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Memulai update DTRACK ..."
-now=$( date + "%Y-%m-%d %H:%M" )
+now=$(date '+%Y-%m-%d %H:%M:%S')
 
 if test -f "/home/pi/.node-red/flows.json";
 then
@@ -24,7 +24,7 @@ then
 
     if test -a "/home/pi/.node-red"
     then
-        scp -r /home/pi/.node-red /home/pi/.node-red-backup-last
+        scp -r /home/pi/.node-red /home/pi/.node-red-backup-last-$now
         echo "Backup flow lama: OK!"
         sudo rm -r /home/pi/.node-red
         unzip -d /home/pi/ node-red-dtrack.zip
